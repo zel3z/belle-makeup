@@ -1,6 +1,9 @@
+<p align="center">
 # ![Belle makeup](maqueta/logo-belle-makeup.png "Belle")
+</p>
 
-Pequeño y bonito **proyecto de curso**: aplicación de tienda virtual, de tipo *maquillaje* para practicar ***estructuras de datos***
+#### ***Belle makeup*** es un sencillo y bonito **proyecto de curso**: 
+aplicación de tienda virtual, de tipo *maquillaje* para practicar ***estructuras de datos***
 
 ### integrantes 
 - yennifer moreno
