@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.geometry.Insets?>
 <?import javafx.scene.Group?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.ComboBox?>
@@ -15,7 +16,7 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="1307.0" prefWidth="1405.0" style="-fx-background-color: white;" xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1" fx:controller="vistas.PreviewVistaController">
+<AnchorPane prefHeight="2850.0" prefWidth="1407.0" style="-fx-background-color: white;" xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.mycompany.bellemake_up.controlador.CatalogovistaController">
    <children>
       <StackPane prefHeight="78" style="-fx-background-color: #FFE1E9;" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
          <children>
@@ -30,7 +31,10 @@
                               <Image url="@../image/lup.png" />
                            </image>
                         </ImageView>
-                        <Label layoutX="185.0" layoutY="31.0" text="Label" />
+                        <Label layoutX="180.0" layoutY="27.0" text="Busca tu producto deseado" textFill="#cfcfcf">
+                           <font>
+                              <Font size="18.0" />
+                           </font></Label>
                         <ImageView fitHeight="68.0" fitWidth="150.0" layoutX="-75.0" layoutY="7.0" preserveRatio="true">
                            <image>
                               <Image url="@../image/logo-belle-makeup.png" />
@@ -69,15 +73,16 @@
                                     </ImageView>
                                  </graphic>
                               </Button>
-                              <Button style="-fx-background-color: #FFE1E9; -fx-cursor: hand;">
-                                 <graphic>
-                                    <ImageView fitHeight="28.0" fitWidth="31.0" preserveRatio="true">
-                                       <image>
-                                          <Image url="@../image/salir.png" />
-                                       </image>
-                                    </ImageView>
-                                 </graphic>
-                              </Button>
+                              <Button onAction="#volverPreview" style="-fx-background-color: #FFE1E9; -fx-cursor: hand;">
+                                        <graphic>
+                                            <ImageView fitHeight="28.0" fitWidth="31.0" preserveRatio="true">
+                                                <image>
+                                                    <Image url="@../image/salir.png" />
+                                                </image>
+                                            </ImageView>
+                                        </graphic>
+                                    </Button>
+
                            </children>
                         </HBox>
                      </children>
@@ -86,7 +91,7 @@
             </Group>
          </children>
       </StackPane>
-      <ScrollPane fitToWidth="true" hbarPolicy="NEVER" style="-fx-background-color: white;" vbarPolicy="AS_NEEDED" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="78.0">
+      <ScrollPane fitToWidth="true" hbarPolicy="NEVER" prefHeight="2772.0" prefWidth="1407.0" style="-fx-background-color: white;" vbarPolicy="AS_NEEDED" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="78.0">
          <content>
             <VBox alignment="TOP_CENTER" spacing="40" style="-fx-background-color: white;">
                <children>
@@ -97,170 +102,473 @@
                               <Image url="@../image/baner.jpg" />
                            </image>
                         </ImageView>
-                        <Label prefHeight="54.0" prefWidth="790.0" text="¿Qué parte de tí quieres resaltar el día de hoy?">
+                        <Label prefHeight="121.0" prefWidth="791.0" text="¿Qué parte de tí quieres resaltar hoy?" textFill="WHITE">
                            <font>
                               <Font name="System Bold" size="36.0" />
                            </font>
                         </Label>
                      </children>
                   </StackPane>
-                  <Pane prefHeight="56.0" prefWidth="1404.0" style="-fx-background-color: white;">
+                  <StackPane prefHeight="150.0" prefWidth="200.0">
                      <children>
-                        <Button layoutX="1271.0" layoutY="2.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="98.0" style="-fx-background-color: white; -fx-cursor: hand;" text="Menor precio">
-                           <font>
-                              <Font name="System Bold" size="12.0" />
-                           </font>
-                        </Button>
-                        <Button layoutX="1096.0" layoutY="1.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="98.0" style="-fx-background-color: white; -fx-cursor: hand;" text="Mayor precio">
-                           <font>
-                              <Font name="System Bold" size="12.0" />
-                           </font>
-                        </Button>
-                        <ComboBox layoutX="38.0" layoutY="1.0" prefWidth="150.0" promptText="Mostrar categorías" style="-fx-background-color: white; -fx-cursor: hand;" visibleRowCount="5" />
-                        <Button layoutX="1062.0" layoutY="-6.0" mnemonicParsing="false" prefHeight="29.0" prefWidth="29.0" style="-fx-background-color: white; -fx-cursor: hand;">
-                           <font>
-                              <Font name="System Bold" size="12.0" />
-                           </font>
-                           <graphic>
-                              <ImageView fitHeight="31.0" fitWidth="49.0" pickOnBounds="true" preserveRatio="true" style="-fx-cursor: hand;">
+                       <HBox alignment="CENTER" fillHeight="false" prefHeight="150.0" prefWidth="1387.0" spacing="20.0" StackPane.alignment="CENTER">
+                  <children>
+                  
+                                    <!-- CATEGORÍAS -->
+                  <ComboBox prefHeight="32.0" prefWidth="154.0" promptText="Mostrar categorías" style="-fx-background-color: white;" visibleRowCount="14">
+                                 <opaqueInsets>
+                                    <Insets right="40.0" top="20.0" />
+                                 </opaqueInsets>
+                              </ComboBox>
+                  
+                                    <!-- ORDENAR MAYOR -->
+                  <Button style="-fx-background-color: transparent;" text="↑  Mayor precio">
+                                 <font>
+                                    <Font size="14.0" />
+                                 </font>
+                              </Button>
+                  
+                                    <!-- ORDENAR MENOR -->
+                  <Button style="-fx-background-color: transparent;" text="↓  Menor precio" HBox.hgrow="ALWAYS">
+                                 <font>
+                                    <Font size="14.0" />
+                                 </font>
+                              </Button>
+                  
+                                    <!-- FLECHA ARRIBA -->
+                  <Button style="-fx-background-color: transparent;" />
+                  
+                                    <!-- FLECHA ABAJO -->
+                  <Button style="-fx-background-color: transparent;" />
+                  
+                                    </children>
+                  </HBox>
+                     </children>
+                  </StackPane>
+                  <HBox alignment="CENTER" prefHeight="210.0" prefWidth="1325.0" spacing="110.0">
+                     <children>
+                        <VBox prefHeight="257.0" prefWidth="252.0">
+                           <children>
+                              <ImageView fitHeight="229.0" fitWidth="276.0" preserveRatio="true">
                                  <image>
-                                    <Image url="@../image/arrib.png" />
+                                    <Image url="@../image/aguamicelar.png" />
                                  </image>
                               </ImageView>
-                           </graphic>
-                        </Button>
-                        <Button layoutX="1232.0" layoutY="-6.0" mnemonicParsing="false" prefHeight="40.0" prefWidth="29.0" style="-fx-background-color: white; -fx-cursor: hand;">
-                           <font>
-                              <Font name="System Bold" size="12.0" />
-                           </font>
-                           <graphic>
-                              <ImageView fitHeight="31.0" fitWidth="49.0" pickOnBounds="true" preserveRatio="true" style="-fx-cursor: hand;">
+                              <Label prefHeight="37.0" prefWidth="184.0" text="Brillo Labial Addict Lip$200.000">
+                                 <VBox.margin>
+                                    <Insets left="20.0" right="20.0" />
+                                 </VBox.margin>
+                              </Label>
+                           </children>
+                        </VBox>
+                        <VBox prefHeight="243.0" prefWidth="219.0">
+                           <children>
+                              <ImageView fitHeight="226.0" fitWidth="232.0" preserveRatio="true">
                                  <image>
-                                    <Image url="@../image/fleb.png" />
+                                    <Image url="@../image/basediorrr.png" />
                                  </image>
                               </ImageView>
-                           </graphic>
-                        </Button>
+                              <Label prefHeight="99.0" prefWidth="178.0" text="Brillo Labial Addict Lip$200.000">
+                                 <VBox.margin>
+                                    <Insets left="30.0" />
+                                 </VBox.margin>
+                              </Label>
+                           </children>
+                        </VBox>
+                        <VBox prefHeight="240.0" prefWidth="182.0">
+                           <children>
+                              <ImageView fitHeight="200.0" fitWidth="242.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../image/bb.png" />
+                                 </image>
+                              </ImageView>
+                              <Label prefHeight="62.0" prefWidth="174.0" text="Brillo Labial Addict Lip$200.000">
+                                 <VBox.margin>
+                                    <Insets bottom="-20.0" left="20.0" />
+                                 </VBox.margin>
+                              </Label>
+                           </children>
+                        </VBox>
+                        <VBox prefHeight="261.0" prefWidth="76.0">
+                           <children>
+                              <ImageView fitHeight="277.0" fitWidth="206.0" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../image/brochas.png" />
+                                 </image>
+                              </ImageView>
+                              <Label prefHeight="72.0" prefWidth="166.0" text="Brillo Labial Addict Lip$200.000">
+                                 <VBox.margin>
+                                    <Insets left="40.0" />
+                                 </VBox.margin>
+                              </Label>
+                           </children>
+                        </VBox>
                      </children>
-                  </Pane>
-                  <HBox alignment="CENTER" prefHeight="210.0" prefWidth="1325.0" spacing="110.0">
+                  </HBox>
+                  <HBox alignment="CENTER" prefHeight="94.0" prefWidth="1403.0" spacing="130.0">
                      <children>
-                        <ImageView fitHeight="249.0" fitWidth="225.0" preserveRatio="true">
-                           <image>
-                              <Image url="@../image/aguamicelar.png" />
-                           </image>
-                        </ImageView>
-                        <ImageView fitHeight="239.0" fitWidth="220.0" preserveRatio="true">
-                           <image>
-                              <Image url="@../image/baseDDDD.png" />
-                           </image>
-                        </ImageView>
-                        <ImageView fitHeight="244.0" fitWidth="236.0" preserveRatio="true">
-                           <image>
-                              <Image url="@../image/brochas.png" />
-                           </image>
-                        </ImageView>
-                        <ImageView fitHeight="233.0" fitWidth="212.0" pickOnBounds="true" preserveRatio="true">
-                           <image>
-                              <Image url="@../image/bb.png" />
-                           </image>
-                        </ImageView>
+                        <VBox prefHeight="319.0" prefWidth="143.0">
+                           <children>
+                              <ImageView fitHeight="189.0" fitWidth="184.0" preserveRatio="true" smooth="false">
+                                 <image>
+                                    <Image url="@../image/cremaH.png" />
+                                 </image>
+                                 <VBox.margin>
+                                    <Insets right="20.0" />
+                                 </VBox.margin>
+                              </ImageView>
+                              <Label prefHeight="47.0" prefWidth="173.0" text="Brillo Labial Addict Lip$200.000">
+                                 <VBox.margin>
+                                    <Insets left="20.0" right="20.0" />
+                                 </VBox.margin>
+                              </Label>
+                           </children>
+                        </VBox>
+                        <VBox prefHeight="39.0" prefWidth="161.0">
+                           <children>
+                              <ImageView fitHeight="260.0" fitWidth="200.0" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../image/correctorM.png" />
+                                 </image>
+                                 <VBox.margin>
+                                    <Insets right="20.0" />
+                                 </VBox.margin>
+                              </ImageView>
+                              <Label prefHeight="99.0" prefWidth="178.0" text="Brillo Labial Addict Lip$200.000">
+                                 <VBox.margin>
+                                    <Insets left="30.0" />
+                                 </VBox.margin>
+                              </Label>
+                           </children>
+                        </VBox>
+                        <VBox prefHeight="257.0" prefWidth="1.0">
+                           <children>
+                              <ImageView fitHeight="189.0" fitWidth="195.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../image/Cosmetiquera.png" />
+                                 </image>
+                              </ImageView>
+                              <Label prefHeight="62.0" prefWidth="174.0" text="Brillo Labial Addict Lip$200.000">
+                                 <VBox.margin>
+                                    <Insets left="20.0" />
+                                 </VBox.margin>
+                              </Label>
+                           </children>
+                        </VBox>
+                        <VBox prefHeight="200.0" prefWidth="100.0">
+                           <children>
+                              <ImageView fitHeight="215.0" fitWidth="141.0" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../image/deli.png" />
+                                 </image>
+                              </ImageView>
+                              <Label text="Brillo Labial Addict Lip$200.000">
+                                 <VBox.margin>
+                                    <Insets left="40.0" />
+                                 </VBox.margin>
+                              </Label>
+                           </children>
+                        </VBox>
+                     </children>
+                  </HBox>
+                  <HBox alignment="CENTER" prefHeight="171.0" prefWidth="1403.0" spacing="150.0">
+                     <children>
+                        <VBox prefHeight="200.0" prefWidth="100.0">
+                           <children>
+                              <ImageView fitHeight="220.0" fitWidth="201.0" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../image/desma.png" />
+                                 </image>
+                              </ImageView>
+                              <Label prefHeight="37.0" prefWidth="184.0" text="Brillo Labial Addict Lip$200.000">
+                                 <VBox.margin>
+                                    <Insets left="20.0" right="20.0" />
+                                 </VBox.margin>
+                              </Label>
+                           </children>
+                        </VBox>
+                        <VBox prefHeight="39.0" prefWidth="161.0">
+                           <children>
+                              <ImageView fitHeight="212.0" fitWidth="163.0" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../image/exfoliante.png" />
+                                 </image>
+                              </ImageView>
+                              <Label prefHeight="99.0" prefWidth="178.0" text="Brillo Labial Addict Lip$200.000">
+                                 <VBox.margin>
+                                    <Insets left="30.0" />
+                                 </VBox.margin>
+                              </Label>
+                           </children>
+                        </VBox>
+                        <VBox prefHeight="257.0" prefWidth="1.0">
+                           <children>
+                              <ImageView fitHeight="203.0" fitWidth="202.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../image/iluminaor.png" />
+                                 </image>
+                              </ImageView>
+                              <Label prefHeight="62.0" prefWidth="174.0" text="Brillo Labial Addict Lip$200.000">
+                                 <VBox.margin>
+                                    <Insets bottom="-20.0" left="20.0" />
+                                 </VBox.margin>
+                              </Label>
+                           </children>
+                        </VBox>
+                        <VBox prefHeight="200.0" prefWidth="100.0">
+                           <children>
+                              <ImageView fitHeight="228.0" fitWidth="176.0" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../image/labail.png" />
+                                 </image>
+                              </ImageView>
+                              <Label prefHeight="18.0" prefWidth="168.0" text="Brillo Labial Addict Lip$200.000">
+                                 <VBox.margin>
+                                    <Insets left="40.0" />
+                                 </VBox.margin>
+                              </Label>
+                           </children>
+                        </VBox>
                      </children>
                   </HBox>
                   <HBox alignment="CENTER" prefHeight="210.0" prefWidth="1325.0" spacing="110.0">
                      <children>
-                        <ImageView fitHeight="249.0" fitWidth="225.0" preserveRatio="true">
-                           <image>
-                              <Image url="@../image/aguamicelar.png" />
-                           </image>
-                        </ImageView>
-                        <ImageView fitHeight="239.0" fitWidth="220.0" preserveRatio="true">
-                           <image>
-                              <Image url="@../image/baseDDDD.png" />
-                           </image>
-                        </ImageView>
-                        <ImageView fitHeight="244.0" fitWidth="236.0" preserveRatio="true">
-                           <image>
-                              <Image url="@../image/brochas.png" />
-                           </image>
-                        </ImageView>
-                        <ImageView fitHeight="233.0" fitWidth="212.0" pickOnBounds="true" preserveRatio="true">
-                           <image>
-                              <Image url="@../image/bb.png" />
-                           </image>
-                        </ImageView>
+                        <VBox prefHeight="200.0" prefWidth="100.0">
+                           <children>
+                              <ImageView fitHeight="220.0" fitWidth="201.0" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../image/laaa.png" />
+                                 </image>
+                              </ImageView>
+                              <Label prefHeight="37.0" prefWidth="184.0" text="Brillo Labial Addict Lip$200.000">
+                                 <VBox.margin>
+                                    <Insets left="20.0" right="20.0" />
+                                 </VBox.margin>
+                              </Label>
+                           </children>
+                        </VBox>
+                        <VBox prefHeight="39.0" prefWidth="161.0">
+                           <children>
+                              <ImageView fitHeight="191.0" fitWidth="200.0" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../image/mascar.png" />
+                                 </image>
+                              </ImageView>
+                              <Label prefHeight="99.0" prefWidth="178.0" text="Brillo Labial Addict Lip$200.000">
+                                 <VBox.margin>
+                                    <Insets left="30.0" />
+                                 </VBox.margin>
+                              </Label>
+                           </children>
+                        </VBox>
+                        <VBox prefHeight="257.0" prefWidth="1.0">
+                           <children>
+                              <ImageView fitHeight="187.0" fitWidth="181.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../image/pestanina.png" />
+                                 </image>
+                              </ImageView>
+                              <Label prefHeight="62.0" prefWidth="174.0" text="Brillo Labial Addict Lip$200.000">
+                                 <VBox.margin>
+                                    <Insets bottom="-20.0" left="20.0" />
+                                 </VBox.margin>
+                              </Label>
+                           </children>
+                        </VBox>
+                        <VBox prefHeight="200.0" prefWidth="100.0">
+                           <children>
+                              <ImageView fitHeight="211.0" fitWidth="201.0" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../image/paletaasom.png" />
+                                 </image>
+                              </ImageView>
+                              <Label text="Brillo Labial Addict Lip$200.000">
+                                 <VBox.margin>
+                                    <Insets left="40.0" />
+                                 </VBox.margin>
+                              </Label>
+                           </children>
+                        </VBox>
                      </children>
                   </HBox>
                   <HBox alignment="CENTER" prefHeight="210.0" prefWidth="1325.0" spacing="110.0">
                      <children>
-                        <ImageView fitHeight="249.0" fitWidth="225.0" preserveRatio="true">
-                           <image>
-                              <Image url="@../image/aguamicelar.png" />
-                           </image>
-                        </ImageView>
-                        <ImageView fitHeight="239.0" fitWidth="220.0" preserveRatio="true">
-                           <image>
-                              <Image url="@../image/baseDDDD.png" />
-                           </image>
-                        </ImageView>
-                        <ImageView fitHeight="244.0" fitWidth="236.0" preserveRatio="true">
-                           <image>
-                              <Image url="@../image/brochas.png" />
-                           </image>
-                        </ImageView>
-                        <ImageView fitHeight="233.0" fitWidth="212.0" pickOnBounds="true" preserveRatio="true">
-                           <image>
-                              <Image url="@../image/bb.png" />
-                           </image>
-                        </ImageView>
+                        <VBox prefHeight="200.0" prefWidth="100.0">
+                           <children>
+                              <ImageView fitHeight="220.0" fitWidth="201.0" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../image/pesta.png" />
+                                 </image>
+                              </ImageView>
+                              <Label prefHeight="37.0" prefWidth="184.0" text="Brillo Labial Addict Lip$200.000">
+                                 <VBox.margin>
+                                    <Insets left="20.0" right="20.0" />
+                                 </VBox.margin>
+                              </Label>
+                           </children>
+                        </VBox>
+                        <VBox prefHeight="39.0" prefWidth="161.0">
+                           <children>
+                              <ImageView fitHeight="204.0" fitWidth="202.0" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../image/pestanasP.png" />
+                                 </image>
+                              </ImageView>
+                              <Label prefHeight="99.0" prefWidth="178.0" text="Brillo Labial Addict Lip$200.000">
+                                 <VBox.margin>
+                                    <Insets left="30.0" />
+                                 </VBox.margin>
+                              </Label>
+                           </children>
+                        </VBox>
+                        <VBox prefHeight="257.0" prefWidth="1.0">
+                           <children>
+                              <ImageView fitHeight="194.0" fitWidth="197.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../image/polvo.png" />
+                                 </image>
+                              </ImageView>
+                              <Label prefHeight="62.0" prefWidth="174.0" text="Brillo Labial Addict Lip$200.000">
+                                 <VBox.margin>
+                                    <Insets bottom="-20.0" left="20.0" />
+                                 </VBox.margin>
+                              </Label>
+                           </children>
+                        </VBox>
+                        <VBox prefHeight="200.0" prefWidth="100.0">
+                           <children>
+                              <ImageView fitHeight="210.0" fitWidth="230.0" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../image/primer.png" />
+                                 </image>
+                              </ImageView>
+                              <Label text="Brillo Labial Addict Lip$200.000">
+                                 <VBox.margin>
+                                    <Insets left="40.0" />
+                                 </VBox.margin>
+                              </Label>
+                           </children>
+                        </VBox>
                      </children>
                   </HBox>
-                  <HBox alignment="CENTER" prefHeight="210.0" prefWidth="1325.0" spacing="110.0">
+                  <HBox alignment="CENTER" prefHeight="202.0" prefWidth="1404.0" spacing="110.0">
                      <children>
-                        <ImageView fitHeight="249.0" fitWidth="225.0" preserveRatio="true">
-                           <image>
-                              <Image url="@../image/aguamicelar.png" />
-                           </image>
-                        </ImageView>
-                        <ImageView fitHeight="239.0" fitWidth="220.0" preserveRatio="true">
-                           <image>
-                              <Image url="@../image/baseDDDD.png" />
-                           </image>
-                        </ImageView>
-                        <ImageView fitHeight="244.0" fitWidth="236.0" preserveRatio="true">
-                           <image>
-                              <Image url="@../image/brochas.png" />
-                           </image>
-                        </ImageView>
-                        <ImageView fitHeight="233.0" fitWidth="212.0" pickOnBounds="true" preserveRatio="true">
-                           <image>
-                              <Image url="@../image/bb.png" />
-                           </image>
-                        </ImageView>
+                        <VBox prefHeight="200.0" prefWidth="100.0">
+                           <children>
+                              <ImageView fitHeight="220.0" fitWidth="201.0" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../image/protectorsolar.png" />
+                                 </image>
+                              </ImageView>
+                              <Label prefHeight="37.0" prefWidth="184.0" text="Brillo Labial Addict Lip$200.000">
+                                 <VBox.margin>
+                                    <Insets left="20.0" right="20.0" />
+                                 </VBox.margin>
+                              </Label>
+                           </children>
+                        </VBox>
+                        <VBox prefHeight="186.0" prefWidth="174.0">
+                           <children>
+                              <ImageView fitHeight="193.0" fitWidth="207.0" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../image/protttt.png" />
+                                 </image>
+                              </ImageView>
+                              <Label prefHeight="99.0" prefWidth="178.0" text="Brillo Labial Addict Lip$200.000">
+                                 <VBox.margin>
+                                    <Insets left="30.0" />
+                                 </VBox.margin>
+                              </Label>
+                           </children>
+                        </VBox>
+                        <VBox prefHeight="257.0" prefWidth="1.0">
+                           <children>
+                              <ImageView fitHeight="203.0" fitWidth="193.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../image/rizador.png" />
+                                 </image>
+                              </ImageView>
+                              <Label prefHeight="25.0" prefWidth="174.0" text="Brillo Labial Addict Lip$200.000">
+                                 <VBox.margin>
+                                    <Insets bottom="-20.0" left="20.0" />
+                                 </VBox.margin>
+                              </Label>
+                           </children>
+                        </VBox>
+                        <VBox prefHeight="200.0" prefWidth="100.0">
+                           <children>
+                              <ImageView fitHeight="199.0" fitWidth="205.0" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../image/rodillo.png" />
+                                 </image>
+                              </ImageView>
+                              <Label text="Brillo Labial Addict Lip$200.000">
+                                 <VBox.margin>
+                                    <Insets left="40.0" />
+                                 </VBox.margin>
+                              </Label>
+                           </children>
+                        </VBox>
                      </children>
                   </HBox>
-                  <HBox alignment="CENTER" prefHeight="210.0" prefWidth="1325.0" spacing="110.0">
+                  <HBox alignment="CENTER" prefHeight="438.0" prefWidth="1406.0" spacing="110.0">
                      <children>
-                        <ImageView fitHeight="249.0" fitWidth="225.0" preserveRatio="true">
-                           <image>
-                              <Image url="@../image/aguamicelar.png" />
-                           </image>
-                        </ImageView>
-                        <ImageView fitHeight="239.0" fitWidth="220.0" preserveRatio="true">
-                           <image>
-                              <Image url="@../image/baseDDDD.png" />
-                           </image>
-                        </ImageView>
-                        <ImageView fitHeight="244.0" fitWidth="236.0" preserveRatio="true">
-                           <image>
-                              <Image url="@../image/brochas.png" />
-                           </image>
-                        </ImageView>
-                        <ImageView fitHeight="233.0" fitWidth="212.0" pickOnBounds="true" preserveRatio="true">
-                           <image>
-                              <Image url="@../image/bb.png" />
-                           </image>
-                        </ImageView>
+                        <VBox prefHeight="532.0" prefWidth="162.0">
+                           <children>
+                              <ImageView fitHeight="196.0" fitWidth="201.0" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../image/rare.png" />
+                                 </image>
+                              </ImageView>
+                              <Label prefHeight="95.0" prefWidth="128.0" text="Brillo Labial Addict Lip$200.000">
+                                 <VBox.margin>
+                                    <Insets left="20.0" right="20.0" />
+                                 </VBox.margin>
+                              </Label>
+                           </children>
+                        </VBox>
+                        <VBox prefHeight="338.0" prefWidth="202.0">
+                           <children>
+                              <ImageView fitHeight="217.0" fitWidth="202.0" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../image/limpiador.png" />
+                                 </image>
+                              </ImageView>
+                              <Label prefHeight="40.0" prefWidth="146.0" text="Brillo Labial Addict Lip$200.000">
+                                 <VBox.margin>
+                                    <Insets left="30.0" />
+                                 </VBox.margin>
+                              </Label>
+                           </children>
+                        </VBox>
+                        <VBox prefHeight="257.0" prefWidth="1.0">
+                           <children>
+                              <ImageView fitHeight="233.0" fitWidth="212.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../image/la%20roche.png" />
+                                 </image>
+                              </ImageView>
+                              <Label prefHeight="0.0" prefWidth="174.0" text="Brillo Labial Addict Lip$200.000">
+                                 <VBox.margin>
+                                    <Insets bottom="-20.0" left="20.0" />
+                                 </VBox.margin>
+                              </Label>
+                           </children>
+                        </VBox>
+                        <VBox prefHeight="200.0" prefWidth="100.0">
+                           <children>
+                              <ImageView fitHeight="209.0" fitWidth="212.0" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../image/labial.png" />
+                                 </image>
+                              </ImageView>
+                              <Label text="Brillo Labial Addict Lip$200.000">
+                                 <VBox.margin>
+                                    <Insets left="40.0" />
+                                 </VBox.margin>
+                              </Label>
+                           </children>
+                        </VBox>
                      </children>
                   </HBox>
                </children>
