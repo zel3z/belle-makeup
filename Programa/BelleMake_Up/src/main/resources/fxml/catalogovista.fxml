@@ -1,0 +1,271 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.Group?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="1307.0" prefWidth="1405.0" style="-fx-background-color: white;" xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1" fx:controller="vistas.PreviewVistaController">
+   <children>
+      <StackPane prefHeight="78" style="-fx-background-color: #FFE1E9;" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <children>
+            <Group>
+               <children>
+                  <Pane prefHeight="78" prefWidth="1038.0" style="-fx-background-color: #FFE1E9;">
+                     <children>
+                        <TextField layoutX="134.0" layoutY="20.0" prefHeight="39.0" prefWidth="732.0" style="-fx-background-radius: 20;" />
+                        <Button layoutX="967.0" layoutY="17.0" prefHeight="40.0" prefWidth="29.0" style="-fx-background-color: #FFE1E9; -fx-cursor: hand;" />
+                        <ImageView fitHeight="29.0" fitWidth="29.0" layoutX="144.0" layoutY="25.0" preserveRatio="true">
+                           <image>
+                              <Image url="@../image/lup.png" />
+                           </image>
+                        </ImageView>
+                        <Label layoutX="185.0" layoutY="31.0" text="Label" />
+                        <ImageView fitHeight="68.0" fitWidth="150.0" layoutX="-75.0" layoutY="7.0" preserveRatio="true">
+                           <image>
+                              <Image url="@../image/logo-belle-makeup.png" />
+                           </image>
+                        </ImageView>
+                        <HBox layoutX="894.0" layoutY="22.0">
+                           <children>
+                              <Button style="-fx-background-color: #FFE1E9; -fx-cursor: hand;">
+                                 <graphic>
+                                    <ImageView fitHeight="28.0" fitWidth="31.0" preserveRatio="true">
+                                       <image>
+                                          <Image url="@../image/cora.png" />
+                                       </image>
+                                    </ImageView>
+                                 </graphic>
+                              </Button>
+                              <Button style="-fx-background-color: #FFE1E9; -fx-cursor: hand;">
+                                 <graphic>
+                                    <ImageView fitHeight="28.0" fitWidth="31.0" preserveRatio="true">
+                                       <image>
+                                          <Image url="@../image/carro.png" />
+                                       </image>
+                                    </ImageView>
+                                 </graphic>
+                              </Button>
+                           </children>
+                        </HBox>
+                        <HBox layoutX="980.0" layoutY="22.0">
+                           <children>
+                              <Button style="-fx-background-color: #FFE1E9; -fx-cursor: hand;">
+                                 <graphic>
+                                    <ImageView fitHeight="28.0" fitWidth="31.0" preserveRatio="true">
+                                       <image>
+                                          <Image url="@../image/his.png" />
+                                       </image>
+                                    </ImageView>
+                                 </graphic>
+                              </Button>
+                              <Button style="-fx-background-color: #FFE1E9; -fx-cursor: hand;">
+                                 <graphic>
+                                    <ImageView fitHeight="28.0" fitWidth="31.0" preserveRatio="true">
+                                       <image>
+                                          <Image url="@../image/salir.png" />
+                                       </image>
+                                    </ImageView>
+                                 </graphic>
+                              </Button>
+                           </children>
+                        </HBox>
+                     </children>
+                  </Pane>
+               </children>
+            </Group>
+         </children>
+      </StackPane>
+      <ScrollPane fitToWidth="true" hbarPolicy="NEVER" style="-fx-background-color: white;" vbarPolicy="AS_NEEDED" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="78.0">
+         <content>
+            <VBox alignment="TOP_CENTER" spacing="40" style="-fx-background-color: white;">
+               <children>
+                  <StackPane maxWidth="1396.0" prefHeight="383.0">
+                     <children>
+                        <ImageView fitHeight="474.0" fitWidth="1503.0" preserveRatio="true">
+                           <image>
+                              <Image url="@../image/baner.jpg" />
+                           </image>
+                        </ImageView>
+                        <Label prefHeight="54.0" prefWidth="790.0" text="¿Qué parte de tí quieres resaltar el día de hoy?">
+                           <font>
+                              <Font name="System Bold" size="36.0" />
+                           </font>
+                        </Label>
+                     </children>
+                  </StackPane>
+                  <Pane prefHeight="56.0" prefWidth="1404.0" style="-fx-background-color: white;">
+                     <children>
+                        <Button layoutX="1271.0" layoutY="2.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="98.0" style="-fx-background-color: white; -fx-cursor: hand;" text="Menor precio">
+                           <font>
+                              <Font name="System Bold" size="12.0" />
+                           </font>
+                        </Button>
+                        <Button layoutX="1096.0" layoutY="1.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="98.0" style="-fx-background-color: white; -fx-cursor: hand;" text="Mayor precio">
+                           <font>
+                              <Font name="System Bold" size="12.0" />
+                           </font>
+                        </Button>
+                        <ComboBox layoutX="38.0" layoutY="1.0" prefWidth="150.0" promptText="Mostrar categorías" style="-fx-background-color: white; -fx-cursor: hand;" visibleRowCount="5" />
+                        <Button layoutX="1062.0" layoutY="-6.0" mnemonicParsing="false" prefHeight="29.0" prefWidth="29.0" style="-fx-background-color: white; -fx-cursor: hand;">
+                           <font>
+                              <Font name="System Bold" size="12.0" />
+                           </font>
+                           <graphic>
+                              <ImageView fitHeight="31.0" fitWidth="49.0" pickOnBounds="true" preserveRatio="true" style="-fx-cursor: hand;">
+                                 <image>
+                                    <Image url="@../image/arrib.png" />
+                                 </image>
+                              </ImageView>
+                           </graphic>
+                        </Button>
+                        <Button layoutX="1232.0" layoutY="-6.0" mnemonicParsing="false" prefHeight="40.0" prefWidth="29.0" style="-fx-background-color: white; -fx-cursor: hand;">
+                           <font>
+                              <Font name="System Bold" size="12.0" />
+                           </font>
+                           <graphic>
+                              <ImageView fitHeight="31.0" fitWidth="49.0" pickOnBounds="true" preserveRatio="true" style="-fx-cursor: hand;">
+                                 <image>
+                                    <Image url="@../image/fleb.png" />
+                                 </image>
+                              </ImageView>
+                           </graphic>
+                        </Button>
+                     </children>
+                  </Pane>
+                  <HBox alignment="CENTER" prefHeight="210.0" prefWidth="1325.0" spacing="110.0">
+                     <children>
+                        <ImageView fitHeight="249.0" fitWidth="225.0" preserveRatio="true">
+                           <image>
+                              <Image url="@../image/aguamicelar.png" />
+                           </image>
+                        </ImageView>
+                        <ImageView fitHeight="239.0" fitWidth="220.0" preserveRatio="true">
+                           <image>
+                              <Image url="@../image/baseDDDD.png" />
+                           </image>
+                        </ImageView>
+                        <ImageView fitHeight="244.0" fitWidth="236.0" preserveRatio="true">
+                           <image>
+                              <Image url="@../image/brochas.png" />
+                           </image>
+                        </ImageView>
+                        <ImageView fitHeight="233.0" fitWidth="212.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../image/bb.png" />
+                           </image>
+                        </ImageView>
+                     </children>
+                  </HBox>
+                  <HBox alignment="CENTER" prefHeight="210.0" prefWidth="1325.0" spacing="110.0">
+                     <children>
+                        <ImageView fitHeight="249.0" fitWidth="225.0" preserveRatio="true">
+                           <image>
+                              <Image url="@../image/aguamicelar.png" />
+                           </image>
+                        </ImageView>
+                        <ImageView fitHeight="239.0" fitWidth="220.0" preserveRatio="true">
+                           <image>
+                              <Image url="@../image/baseDDDD.png" />
+                           </image>
+                        </ImageView>
+                        <ImageView fitHeight="244.0" fitWidth="236.0" preserveRatio="true">
+                           <image>
+                              <Image url="@../image/brochas.png" />
+                           </image>
+                        </ImageView>
+                        <ImageView fitHeight="233.0" fitWidth="212.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../image/bb.png" />
+                           </image>
+                        </ImageView>
+                     </children>
+                  </HBox>
+                  <HBox alignment="CENTER" prefHeight="210.0" prefWidth="1325.0" spacing="110.0">
+                     <children>
+                        <ImageView fitHeight="249.0" fitWidth="225.0" preserveRatio="true">
+                           <image>
+                              <Image url="@../image/aguamicelar.png" />
+                           </image>
+                        </ImageView>
+                        <ImageView fitHeight="239.0" fitWidth="220.0" preserveRatio="true">
+                           <image>
+                              <Image url="@../image/baseDDDD.png" />
+                           </image>
+                        </ImageView>
+                        <ImageView fitHeight="244.0" fitWidth="236.0" preserveRatio="true">
+                           <image>
+                              <Image url="@../image/brochas.png" />
+                           </image>
+                        </ImageView>
+                        <ImageView fitHeight="233.0" fitWidth="212.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../image/bb.png" />
+                           </image>
+                        </ImageView>
+                     </children>
+                  </HBox>
+                  <HBox alignment="CENTER" prefHeight="210.0" prefWidth="1325.0" spacing="110.0">
+                     <children>
+                        <ImageView fitHeight="249.0" fitWidth="225.0" preserveRatio="true">
+                           <image>
+                              <Image url="@../image/aguamicelar.png" />
+                           </image>
+                        </ImageView>
+                        <ImageView fitHeight="239.0" fitWidth="220.0" preserveRatio="true">
+                           <image>
+                              <Image url="@../image/baseDDDD.png" />
+                           </image>
+                        </ImageView>
+                        <ImageView fitHeight="244.0" fitWidth="236.0" preserveRatio="true">
+                           <image>
+                              <Image url="@../image/brochas.png" />
+                           </image>
+                        </ImageView>
+                        <ImageView fitHeight="233.0" fitWidth="212.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../image/bb.png" />
+                           </image>
+                        </ImageView>
+                     </children>
+                  </HBox>
+                  <HBox alignment="CENTER" prefHeight="210.0" prefWidth="1325.0" spacing="110.0">
+                     <children>
+                        <ImageView fitHeight="249.0" fitWidth="225.0" preserveRatio="true">
+                           <image>
+                              <Image url="@../image/aguamicelar.png" />
+                           </image>
+                        </ImageView>
+                        <ImageView fitHeight="239.0" fitWidth="220.0" preserveRatio="true">
+                           <image>
+                              <Image url="@../image/baseDDDD.png" />
+                           </image>
+                        </ImageView>
+                        <ImageView fitHeight="244.0" fitWidth="236.0" preserveRatio="true">
+                           <image>
+                              <Image url="@../image/brochas.png" />
+                           </image>
+                        </ImageView>
+                        <ImageView fitHeight="233.0" fitWidth="212.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../image/bb.png" />
+                           </image>
+                        </ImageView>
+                     </children>
+                  </HBox>
+               </children>
+            </VBox>
+         </content>
+      </ScrollPane>
+   </children>
+</AnchorPane>
