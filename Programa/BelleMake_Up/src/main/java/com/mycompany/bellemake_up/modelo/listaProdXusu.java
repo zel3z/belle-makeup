@@ -1,19 +1,18 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
-package modelo;
+package org.example.belle_makeup.modelo;
 
-/**
- *
- * @author yennf
- */
-public class listaProdXusu {
+import java.time.LocalDate;
+import java.util.ArrayList;
+import modelo.nodo;
+import modelo.prodXusu;
+
+public class listaProdXusu implements JsonSerializable<prodXusu> {
 
     public nodo<prodXusu> cab;
+    private String usuarioActual;
 
     public listaProdXusu() {
         cab = null;
+        this.usuarioActual = null;
     }
 
     public boolean getEsVacia() {
@@ -21,13 +20,16 @@ public class listaProdXusu {
         //return cab==null?true:false;
     }
 
-    public nodo<prodXusu> crearNodo(prodXusu pxu) {
-        return new nodo<>(pxu);
+    public void setUsuarioActual(String usuario) {
+        this.usuarioActual = usuario;
     }
 
+    public String getUsuarioActual() {
+        return usuarioActual;
+    }
 
-    public void agregar(prodXusu pxu) {
-        nodo<prodXusu> nuevo = crearNodo(pxu);
+    public void insertar(prodXusu item) {
+        nodo<prodXusu> nuevo = new nodo<>(item);
         if (getEsVacia()) {
             cab = nuevo;
         } else {
@@ -40,6 +42,222 @@ public class listaProdXusu {
         }
     }
 
+    @Override
+    public ArrayList<prodXusu> toArrayList() {
+        ArrayList<prodXusu> lista = new ArrayList<>();
+        nodo<prodXusu> actual = cab;
+
+        while (actual != null) {
+            lista.add(actual.info);
+            actual = actual.sig;
+        }
+
+        return lista;
+    }
+
+    /**
+     * Carga datos desde ArrayList y filtra SOLO los del usuario actual
+     * @param datos ArrayList completo con datos de todos los usuarios
+     */
+    @Override
+    public void fromArrayList(ArrayList<prodXusu> datos) {
+        limpiar();
+
+        if (usuarioActual == null) {
+            return; // No hay usuario para filtrar
+        }
+
+        for (prodXusu prodxusu : datos) {
+            if (prodxusu.getUsuario().equals(usuarioActual)) {
+                insertar(prodxusu);
+            }
+        }
+    }
+
+    /**
+     * Limpia toda la lista
+     */
+    @Override
+    public void limpiar() {
+        cab = null;
+    }
+
+    /**
+     * Busca un nodo específico por usuario e ID de producto
+     * @param usuario Nombre del usuario
+     * @param idprod ID del producto
+     * @return Nodo encontrado o null si no existe
+     */
+    public nodo<prodXusu> buscarNodo(String usuario, String idprod) {
+        nodo<prodXusu> actual = cab;
+
+        while (actual != null) {
+            prodXusu dato = actual.info;
+            if (dato.getUsuario().equals(usuario) &&
+                    dato.getIdprod().equals(idprod)) {
+                return actual;
+            }
+            actual = actual.sig;
+        }
+
+        return null;
+    }
+
+    /**
+     * Agrega o actualiza el estado de favorito de un producto
+     * @param usuario Nombre del usuario
+     * @param idprod ID del producto
+     * @return true si quedó marcado como favorito, false si se desmarcó
+     */
+    public boolean agregarOActualizarFavorito(String usuario, String idprod) {
+        nodo<prodXusu> nodo = buscarNodo(usuario, idprod);
+
+        if (nodo == null) {
+            prodXusu nuevo = new prodXusu();
+            nuevo.setUsuario(usuario);
+            nuevo.setIdprod(idprod);
+            nuevo.setFavorito(true);
+            nuevo.setCarrito(false);
+            nuevo.setComprado(null);
+            nuevo.setCantiComprado(0);
+
+            insertar(nuevo);
+            return true;
+        } else {
+            boolean nuevoEstado = !nodo.info.isFavorito();
+            nodo.info.setFavorito(nuevoEstado);
+            return nuevoEstado;
+        }
+    }
+
+    /**
+     * Agrega o actualiza el estado de carrito de un producto
+     * @param usuario Nombre del usuario
+     * @param idprod ID del producto
+     * @return true si quedó en carrito, false si se quitó
+     */
+    public boolean agregarOActualizarCarrito(String usuario, String idprod) {
+        nodo<prodXusu> nodo = buscarNodo(usuario, idprod);
+
+        if (nodo == null) {
+            prodXusu nuevo = new prodXusu();
+            nuevo.setUsuario(usuario);
+            nuevo.setIdprod(idprod);
+            nuevo.setFavorito(false);
+            nuevo.setCarrito(true);
+            nuevo.setComprado(null);
+            nuevo.setCantiComprado(0);
+
+            insertar(nuevo);
+            return true;
+        } else {
+            // Ya existe, hacer toggle
+            boolean nuevoEstado = !nodo.info.isCarrito();
+            nodo.info.setCarrito(nuevoEstado);
+            return nuevoEstado;
+        }
+    }
+
+    /**
+     * Registra una compra de producto
+     * @param usuario Nombre del usuario
+     * @param idprod ID del producto
+     * @param cantidad Cantidad comprada
+     */
+    public void registrarCompra(String usuario, String idprod, int cantidad) {
+        nodo<prodXusu> nodo = buscarNodo(usuario, idprod);
+
+        if (nodo == null) {
+            prodXusu nuevo = new prodXusu();
+            nuevo.setUsuario(usuario);
+            nuevo.setIdprod(idprod);
+            nuevo.setFavorito(false);
+            nuevo.setCarrito(false);
+            nuevo.setComprado(LocalDate.now());
+            nuevo.setCantiComprado(cantidad);
+
+            insertar(nuevo);
+        } else {
+            prodXusu dato = nodo.info;
+            dato.setComprado(LocalDate.now());
+            dato.setCantiComprado(dato.getCantiComprado() + cantidad);
+            dato.setCarrito(false); // Quitar del carrito después de comprar
+        }
+    }
+
+    /**
+     * Obtiene todos los productos en carrito del usuario actual
+     * @return ArrayList de productos en carrito
+     */
+    public ArrayList<prodXusu> obtenerCarrito() {
+        ArrayList<prodXusu> carrito = new ArrayList<>();
+        nodo<prodXusu> actual = cab;
+
+        while (actual != null) {
+            if (actual.info.isCarrito()) {
+                carrito.add(actual.info);
+            }
+            actual = actual.sig;
+        }
+
+        return carrito;
+    }
+
+    /**
+     * Obtiene todos los productos favoritos del usuario actual
+     * @return ArrayList de productos favoritos
+     */
+    public ArrayList<prodXusu> obtenerFavoritos() {
+        ArrayList<prodXusu> favoritos = new ArrayList<>();
+        nodo<prodXusu> actual = cab;
+
+        while (actual != null) {
+            if (actual.info.isFavorito()) {
+                favoritos.add(actual.info);
+            }
+            actual = actual.sig;
+        }
+
+        return favoritos;
+    }
+
+    /**
+     * Obtiene todas las compras del usuario actual
+     * @return ArrayList de productos comprados
+     */
+    public ArrayList<prodXusu> obtenerCompras() {
+        ArrayList<prodXusu> compras = new ArrayList<>();
+        nodo<prodXusu> actual = cab;
+
+        while (actual != null) {
+            if (actual.info.getComprado() != null) {
+                compras.add(actual.info);
+            }
+            actual = actual.sig;
+        }
+
+        return compras;
+    }
+
+    /**
+     * Verifica si un producto está en favoritos
+     * @param idprod ID del producto
+     * @return true si está en favoritos
+     */
+    public boolean esFavorito(String idprod) {
+        nodo<prodXusu> nodo = buscarNodo(usuarioActual, idprod);
+        return nodo != null && nodo.info.isFavorito();
+    }
+
+    /**
+     * Verifica si un producto está en carrito
+     * @param idprod ID del producto
+     * @return true si está en carrito
+     */
+    public boolean estaEnCarrito(String idprod) {
+        nodo<prodXusu> nodo = buscarNodo(usuarioActual, idprod);
+        return nodo != null && nodo.info.isCarrito();
+    }
 
     public int tamaño() {
         int contador = 0;
@@ -49,19 +267,6 @@ public class listaProdXusu {
             actual = actual.sig;
         }
         return contador;
-    }
-
- 
-    public prodXusu obtener(int index) {
-        if (index < 0 || index >= tamaño()) {
-            return null;
-        }
-
-        nodo<prodXusu> actual = cab;
-        for (int i = 0; i < index; i++) {
-            actual = actual.sig;
-        }
-        return actual.info;
     }
 
 }

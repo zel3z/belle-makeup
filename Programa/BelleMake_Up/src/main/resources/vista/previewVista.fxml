@@ -1,11 +1,150 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.scene.control.ComboBox?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.Group?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="1307.0" prefWidth="1405.0" style="-fx-background-color: FFFFFF;" xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1" fx:controller="vistas.PreviewVistaController">
+
+    <children>
+
+              <!-- ================= HEADER ================= -->
+        <StackPane prefHeight="78" style="-fx-background-color: #FFE1E9;" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+
+                  <Group>
+                <Pane prefHeight="78" prefWidth="1038.0" style="-fx-background-color: #FFE1E9;">
+                    <children>
+                  <TextField layoutX="134.0" layoutY="20.0" prefHeight="39.0" prefWidth="732.0" style="-fx-background-radius: 20;">
+                     <opaqueInsets>
+                        <Insets />
+                     </opaqueInsets>
+                  </TextField>
+                  <Button layoutX="967.0" layoutY="17.0" mnemonicParsing="false" prefHeight="40.0" prefWidth="29.0" style="-fx-background-color: FFE1E9; -fx-cursor: hand;" />
+                  <ImageView fitHeight="29.0" fitWidth="29.0" layoutX="144.0" layoutY="25.0" pickOnBounds="true" preserveRatio="true" style="-fx-view-order: 988B8B;">
+                     <image>
+                        <Image url="@../image/lup.png" />
+                     </image>
+                  </ImageView>
+                  <Label layoutX="185.0" layoutY="31.0" text="Label" />
+                        <ImageView fitHeight="68.0" fitWidth="150.0" layoutX="-75.0" layoutY="7.0" preserveRatio="true">
+                            <image>
+                                <Image url="@../image/logo-belle-makeup.png" />
+                            </image>
+                        </ImageView>
+                  <HBox layoutX="894.0" layoutY="22.0" prefHeight="28.0" prefWidth="87.0">
+                     <children>
+                        <Button mnemonicParsing="false" prefHeight="40.0" prefWidth="29.0" style="-fx-background-color: FFE1E9; -fx-cursor: hand;">
+                           <graphic>
+                              <ImageView fitHeight="28.0" fitWidth="31.0" pickOnBounds="true" preserveRatio="true" style="-fx-cursor: hand;">
+                                 <image>
+                                    <Image url="@../image/cora.png" />
+                                 </image>
+                              </ImageView>
+                           </graphic>
+                        </Button>
+                        <Button mnemonicParsing="false" prefHeight="40.0" prefWidth="29.0" style="-fx-background-color: FFE1E9; -fx-cursor: hand;">
+                           <graphic>
+                              <ImageView fitHeight="28.0" fitWidth="31.0" pickOnBounds="true" preserveRatio="true" style="-fx-cursor: hand;">
+                                 <image>
+                                    <Image url="@../image/carro.png" />
+                                 </image>
+                              </ImageView>
+                           </graphic>
+                        </Button>
+                     </children>
+                  </HBox>
+                  <HBox layoutX="980.0" layoutY="22.0" prefHeight="28.0" prefWidth="87.0">
+                     <children>
+                        <Button mnemonicParsing="false" prefHeight="40.0" prefWidth="29.0" style="-fx-background-color: FFE1E9; -fx-cursor: hand;">
+                           <graphic>
+                              <ImageView fitHeight="28.0" fitWidth="31.0" pickOnBounds="true" preserveRatio="true" style="-fx-cursor: hand;">
+                                 <image>
+                                    <Image url="@../image/his.png" />
+                                 </image>
+                              </ImageView>
+                           </graphic>
+                        </Button>
+                        <Button mnemonicParsing="false" prefHeight="40.0" prefWidth="29.0" style="-fx-background-color: FFE1E9; -fx-cursor: hand;">
+                           <graphic>
+                              <ImageView fitHeight="28.0" fitWidth="31.0" pickOnBounds="true" preserveRatio="true" style="cursor: hand;">
+                                 <image>
+                                    <Image url="@../image/user.png" />
+                                 </image>
+                              </ImageView>
+                           </graphic>
+                        </Button>
+                     </children>
+                  </HBox>
+                    </children>
+                </Pane>
+            </Group>
+
+              </StackPane>
+
+                                                  <!-- ================= CONTENIDO CON SCROLL ================= -->
+                    <ScrollPane fitToHeight="true" fitToWidth="true" hbarPolicy="NEVER" layoutY="78" style="-fx-background-color: white;" vbarPolicy="AS_NEEDED">
+
+    <content>
+        <!-- CONTENEDOR CENTRAL -->
+        <VBox alignment="TOP_CENTER" spacing="40" style="-fx-background-color: FFFFFF;">
+
+            <!-- BANNER CON TEXTO ENCIMA (RESPONSIVE) -->
+            <StackPane maxWidth="1396.0" prefHeight="383.0" prefWidth="1396.0">
+                <ImageView fitHeight="474.0" fitWidth="1503.0" pickOnBounds="true" preserveRatio="true">
+                    <image>
+                        <Image url="@../image/baner.jpg" />
+                    </image>
+                </ImageView>
+   
+                   <Label alignment="CENTER" style="-fx-font-size: 3vw; -fx-font-weight: bold;" text="¿Qué parte de tí quieres resaltar el día de hoy?" textAlignment="CENTER" textFill="white" wrapText="true">
+                     <font>
+                        <Font name="Arial" size="36.0" />
+                     </font>
+                  </Label>
+            </StackPane>
+
+            <!-- SEGUNDA IMAGEN, TAMBIÉN RESPONSIVE -->
+            <StackPane maxWidth="1358.0" prefHeight="148.0" prefWidth="1358.0" style="-fx-background-color: FFFFFF;">
+                <ImageView fitHeight="242.0" fitWidth="701.0" pickOnBounds="true" preserveRatio="true">
+                    <image>
+                        <Image url="@../image/bolascategorias.png" />
+                    </image>
+                </ImageView>
+            </StackPane>
+
+        </VBox>
+    </content>
+</ScrollPane>
+      <Button layoutX="584.0" layoutY="834.0" mnemonicParsing="false" prefHeight="39.0" prefWidth="222.0" style="-fx-background-radius: 20; -fx-background-color: DF0909; -fx-cursor: hand;" text="Ver catálogo" textFill="WHITE">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Button>
+      <HBox layoutX="62.0" layoutY="957.0" prefHeight="100.0" prefWidth="200.0">
+         <children>
+            <ImageView fitHeight="239.0" fitWidth="259.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../image/rub.jpg" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="150.0" fitWidth="206.0" pickOnBounds="true" preserveRatio="true" />
+            <ImageView fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true" />
+         </children>
+      </HBox>
+      <HBox layoutX="1116.0" layoutY="753.0" prefHeight="28.0" prefWidth="87.0" />
 
 
-<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/25" fx:controller="vistas.PreviewVistaController">
-   <children>
-      <ComboBox layoutX="264.0" layoutY="99.0" prefWidth="150.0" />
-   </children>
+    </children>
+
 </AnchorPane>

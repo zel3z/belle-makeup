@@ -1,14 +1,10 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
-package modelo;
+package org.example.belle_makeup.modelo;
 
-/**
- *
- * @author yennf
- */
-public class listaInventario {
+import java.util.ArrayList;
+import modelo.nodo;
+import modelo.producto;
+
+public class listaInventario implements JsonSerializable<producto> {
 
     public nodo<producto> cab;
 
@@ -19,16 +15,80 @@ public class listaInventario {
     public boolean getEsVacia() {
         return cab == null;
         //return cab==null?true:false;
-
     }
 
-    public nodo<producto> crearNodo(producto prod) {
-        return new nodo<>(prod);
+    @Override
+    public ArrayList<producto> toArrayList() { //pasar toda la lista enlazada a ArrayList para serializar a JSON
+        ArrayList<producto> lista = new ArrayList<>(); //nuevo arraylist porq se reescribirá todo
+        nodo<producto> actual = cab;
+
+        while (actual != null) {
+            lista.add(actual.info);
+            actual = actual.sig;
+        }
+        return lista;
     }
 
- 
+    /**
+     * Carga productos desde ArrayList deserializado de JSON
+     * @param datos ArrayList de productos
+     */
+    @Override
+    public void fromArrayList(ArrayList<producto> datos) {
+        limpiar();
+        for (producto producto : datos) {
+            agregar(producto);
+        }
+    }
+
+    @Override
+    public void limpiar() {
+        cab = null;
+    }
+
+    // para usar en prodXusu pues allá solo se maneja IDprod
+    //ej cuando usuario accione un producto se atrapa el nombre en cierto componente
+    //y se busca con este para guardar id en el nodo
+    public String buscarIdPorNombre(String nombre) {
+        nodo<producto> actual = cab;
+
+        while (actual != null) {
+            if (actual.info.getNomprod().equalsIgnoreCase(nombre)) {
+                return actual.info.getIdprod();
+            }
+            actual = actual.sig;
+        }
+        return null;
+    }
+
+    /**
+     * Reduce el stock de un producto después de una compra
+     * @param idprod ID del producto
+     * @param cantidad Cantidad a reducir
+     * @return true si se redujo exitosamente, false si no hay suficiente stock
+     */
+    public boolean reducirStock(String idprod, int cantidad) {
+        nodo<producto> actual = cab;
+
+        while (actual != null) {
+            if (actual.info.getIdprod().equals(idprod)) {
+                int stockActual = actual.info.getStock();
+
+                if (stockActual >= cantidad) {
+                    actual.info.setStock(stockActual - cantidad);
+                    actual.info.setVendidos(actual.info.getVendidos() + cantidad);
+                    return true;
+                } else {
+                    return false; // No hay suficiente stock
+                }
+            }
+            actual = actual.sig;
+        }
+        return false; // Producto no encontrado
+    }
+
     public void agregar(producto prod) {
-        nodo<producto> nuevo = crearNodo(prod);
+        nodo<producto> nuevo = new nodo<>(prod);
         if (getEsVacia()) {
             cab = nuevo;
         } else {
@@ -41,62 +101,4 @@ public class listaInventario {
         }
     }
 
-  
-    public int tamaño() {
-        int contador = 0;
-        nodo<producto> actual = cab;
-        while (actual != null) {
-            contador++;
-            actual = actual.sig;
-        }
-        return contador;
-    }
-
-
-    public producto obtener(int index) {
-        if (index < 0 || index >= tamaño()) {
-            return null;
-        }
-
-        nodo<producto> actual = cab;
-        for (int i = 0; i < index; i++) {
-            actual = actual.sig;
-        }
-        return actual.info;
-    }
-
-
-public listaInventario buscarPorNombre(String nombre) {
-    listaInventario resultados = new listaInventario();
-    nodo<producto> actual = cab;
-
-    while (actual != null) {
-        if (actual.info.getNomprod().toLowerCase().contains(nombre.toLowerCase())) {
-            resultados.agregar(actual.info);
-        }
-        actual = actual.sig;
-    }
-    return resultados;
-}
-
-
-public producto buscarPorId(String id) {
-    nodo<producto> actual = cab;
-    while (actual != null) {
-        if (actual.info.getIdprod().equalsIgnoreCase(id)) {
-            return actual.info;
-        }
-        actual = actual.sig;
-    }
-    return null;
-}
-
-    public void mostrar() {
-        nodo<producto> actual = cab;
-        System.out.println("=== INVENTARIO (" + tamaño() + " productos) ===");
-        while (actual != null) {
-            System.out.println(actual.info);
-            actual = actual.sig;
-        }
-    }
 }

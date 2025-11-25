@@ -1,14 +1,15 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
-package modelo;
+package org.example.belle_makeup.modelo;
 
-/**
- *
- * @author yennf
- */
-public class listaUsuario {
+import static com.mycompany.bellemake_up.BelleMake_Up.listaProdXUsu;
+import static com.mycompany.bellemake_up.BelleMake_Up.listaUsuario;
+import static com.mycompany.bellemake_up.BelleMake_Up.usuarioActual;
+import com.mycompany.bellemake_up.controlador.JsonManager;
+import java.util.ArrayList;
+import java.util.Objects;
+import modelo.nodo;
+import modelo.usuario;
+
+public class listaUsuario implements JsonSerializable<usuario> {
 
     public nodo<usuario> cab;
 
@@ -21,14 +22,8 @@ public class listaUsuario {
         //return cab==null?true:false;
     }
 
-
-    public nodo<usuario> crearNodo(usuario user) {
-        return new nodo<>(user);
-    }
-
- 
     public void agregar(usuario user) {
-        nodo<usuario> nuevo = crearNodo(user);
+        nodo<usuario> nuevo = new nodo<>(user);
         if (getEsVacia()) {
             cab = nuevo;
         } else {
@@ -41,7 +36,64 @@ public class listaUsuario {
         }
     }
 
- 
+    @Override
+    public ArrayList<usuario> toArrayList() {
+        ArrayList<usuario> lista = new ArrayList<>();
+        nodo<usuario> actual = cab;
+
+        while (actual != null) {
+            lista.add(actual.info);
+            actual = actual.sig;
+        }
+        return lista;
+    }
+
+    @Override
+    public void fromArrayList(ArrayList<usuario> datos) {
+        limpiar();
+        for (usuario usuario : datos) {
+            agregar(usuario);
+        }
+    }
+
+    @Override
+    public void limpiar() {
+        cab = null;
+    }
+
+    /**
+     * Validar credenciales login
+     */
+    public usuario validarLogin(String nombreUsuario, String contra) {
+       nodo<usuario> actual = cab;
+
+        while (actual != null) {
+            usuario user = actual.info;
+            if (user.getUsuario().equals(nombreUsuario) &&
+                    Objects.equals(user.getContra(), contra)) {
+                return user;
+            }
+            actual = actual.sig;
+        } return null;
+    }
+
+    /**
+     * Verifica si un nombre de usuario ya existe
+     * @param nombreUsuario Nombre de usuario a verificar
+     * @return true si existe, false si está disponible
+     */
+    public boolean existeUsuario(String nombreUsuario) {
+        nodo<usuario> actual = cab;
+
+        while (actual != null) {
+            if (actual.info.getUsuario().equals(nombreUsuario)) {
+                return true;
+            }
+            actual = actual.sig;
+        }
+        return false;
+    }
+
     public int tamaño() {
         int contador = 0;
         nodo<usuario> actual = cab;
@@ -51,35 +103,27 @@ public class listaUsuario {
         }
         return contador;
     }
-
-   
-    public usuario obtener(int index) {
-        if (index < 0 || index >= tamaño()) {
-            return null;
+    
+    public static boolean registrarUsuario(String usuario, String nombre,
+                                           String contra, String correo, String rol) {
+        if (listaUsuario.existeUsuario(usuario)) {
+            return false;
         }
-
-        nodo<usuario> actual = cab;
-        for (int i = 0; i < index; i++) {
-            actual = actual.sig;
+        usuario nuevo = new usuario(usuario, nombre, contra, correo, rol);
+        listaUsuario.agregar(nuevo);
+        JsonManager.guardarUsuarios(listaUsuario);
+        return true;
+    }
+    
+    public static boolean realizarLogin(String usuario, String contrasena) {
+        usuario user = listaUsuario.validarLogin(usuario, contrasena);
+        if (user != null) {
+            usuarioActual = usuario;
+            listaProdXUsu.setUsuarioActual(usuarioActual);
+            JsonManager.cargarProdXUsu(listaProdXUsu);
+            return true;
         }
-        return actual.info;
+        return false;
     }
 
-  
-    public usuario buscarPorId(String id) {
-        nodo<usuario> actual = cab;
-        while (actual != null) {
-            if (actual.info.getUsuario().equalsIgnoreCase(id)) {
-                return actual.info;
-            }
-            actual = actual.sig;
-        }
-        return null;
-    }
-
-
-    public boolean validarLogin(String usuario, String password) {
-        usuario user = buscarPorId(usuario);
-        return user != null && user.getContra().equals(password);
-    }
 }

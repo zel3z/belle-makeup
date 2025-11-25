@@ -1,0 +1,19 @@
+[
+
+  {
+    "usuario": "bea",
+    "nombre": "beatri",
+    "contra": 1234,
+    "correo": "yoyo",
+    "rol": "usuario"
+  },
+
+  {
+    "usuario": "beaadmin",
+    "nombre": "beatri",
+    "contra": 1234,
+    "correo": "yoyo",
+    "rol": "admin"
+  }
+
+]

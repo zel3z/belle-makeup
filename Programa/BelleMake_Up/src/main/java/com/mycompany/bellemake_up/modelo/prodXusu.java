@@ -4,6 +4,7 @@
  */
 package modelo;
 
+import java.time.LocalDate;
 import java.util.Date;
 
 /**
@@ -11,10 +12,11 @@ import java.util.Date;
  * @author yennf
  */
 public class prodXusu {
+ public String usuario;
     public String idprod;
     public boolean favorito;
     public boolean carrito;
-    public Date comprado;
+    public LocalDate comprado;
     public int cantiComprado;
 
     public String getIdprod() {
@@ -23,14 +25,23 @@ public class prodXusu {
 
     public prodXusu() {}
 
-    public prodXusu(String idprod, boolean favorito, boolean carrito, Date comprado, int cantiComprado) {
+    public prodXusu(String usu, String idprod, boolean favorito, boolean carrito, LocalDate comprado, int cantiComprado) {
+        this.usuario= usu;
         this.idprod = idprod;
         this.favorito = favorito;
         this.carrito = carrito;
         this.comprado = comprado;
         this.cantiComprado = cantiComprado;
     }
-    
+
+    public String getUsuario() {
+        return usuario;
+    }
+
+    public void setUsuario(String usuario) {
+        this.usuario = usuario;
+    }
+
     public void setIdprod(String idprod) {
         this.idprod = idprod;
     }
@@ -51,11 +62,11 @@ public class prodXusu {
         this.carrito = carrito;
     }
 
-    public Date getComprado() {
+    public LocalDate getComprado() {
         return comprado;
     }
 
-    public void setComprado(Date comprado) {
+    public void setComprado(LocalDate comprado) {
         this.comprado = comprado;
     }
 
