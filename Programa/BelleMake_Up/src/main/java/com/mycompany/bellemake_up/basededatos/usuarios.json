@@ -1,0 +1,30 @@
+[
+  {
+    "usuario": "bea",
+    "nombre": "b",
+    "contra": "123",
+    "correo": "b@correo.com",
+    "rol": "cliente"
+  },
+  {
+    "usuario": "dan",
+    "nombre": "da",
+    "contra": "da",
+    "correo": "da",
+    "rol": "cliente"
+  },
+  {
+    "usuario": "beaa",
+    "nombre": "bea",
+    "contra": "123",
+    "correo": "bea@gmail",
+    "rol": "cliente"
+  },
+  {
+    "usuario": "yenney",
+    "nombre": "Yennifer Moreno",
+    "contra": "30645",
+    "correo": "yenni@gmail.com",
+    "rol": "cliente"
+  }
+]
