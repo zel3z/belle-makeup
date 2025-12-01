@@ -1,16 +1,19 @@
-C:\Users\yennf\OneDrive\Documentos\NetBeansProjects\BelleMake_Up\src\main\java\com\mycompany\bellemake_up\BelleMake_Up.java
-C:\Users\yennf\OneDrive\Documentos\NetBeansProjects\BelleMake_Up\src\main\java\com\mycompany\bellemake_up\modelo\prodXusu.java
-C:\Users\yennf\OneDrive\Documentos\NetBeansProjects\BelleMake_Up\src\main\java\com\mycompany\bellemake_up\modelo\usuario.java
-C:\Users\yennf\OneDrive\Documentos\NetBeansProjects\BelleMake_Up\src\main\java\com\mycompany\bellemake_up\modelo\GestorJSONBase.java
-C:\Users\yennf\OneDrive\Documentos\NetBeansProjects\BelleMake_Up\src\main\java\com\mycompany\bellemake_up\modelo\listaInventario.java
-C:\Users\yennf\OneDrive\Documentos\NetBeansProjects\BelleMake_Up\src\main\java\com\mycompany\bellemake_up\modelo\ProdXUsuJSON.java
-C:\Users\yennf\OneDrive\Documentos\NetBeansProjects\BelleMake_Up\src\main\java\com\mycompany\bellemake_up\modelo\listaProdXusu.java
-C:\Users\yennf\OneDrive\Documentos\NetBeansProjects\BelleMake_Up\src\main\java\com\mycompany\bellemake_up\controlador\listaProdXUsuControl.java
-C:\Users\yennf\OneDrive\Documentos\NetBeansProjects\BelleMake_Up\src\main\java\com\mycompany\bellemake_up\modelo\nodo.java
-C:\Users\yennf\OneDrive\Documentos\NetBeansProjects\BelleMake_Up\src\main\java\com\mycompany\bellemake_up\modelo\producto.java
-C:\Users\yennf\OneDrive\Documentos\NetBeansProjects\BelleMake_Up\src\main\java\com\mycompany\bellemake_up\modelo\ProductoJSON.java
-C:\Users\yennf\OneDrive\Documentos\NetBeansProjects\BelleMake_Up\src\main\java\com\mycompany\bellemake_up\modelo\listaUsuario.java
-C:\Users\yennf\OneDrive\Documentos\NetBeansProjects\BelleMake_Up\src\main\java\com\mycompany\bellemake_up\modelo\UsuarioJSON.java
-C:\Users\yennf\OneDrive\Documentos\NetBeansProjects\BelleMake_Up\src\main\java\com\mycompany\bellemake_up\controlador\listaProdControl.java
-C:\Users\yennf\OneDrive\Documentos\NetBeansProjects\BelleMake_Up\src\main\java\com\mycompany\bellemake_up\controlador\listaUsuarioControl.java
-C:\Users\yennf\OneDrive\Documentos\NetBeansProjects\BelleMake_Up\src\main\java\com\mycompany\bellemake_up\vistas\PreviewVistaController.java
+C:\Users\yennf\Music\BelleMake_Up Bueno (2)\BelleMake_Up Bueno\BelleMake_Up\BelleMake_Up\src\main\java\com\mycompany\bellemake_up\controlador\FavoritosvistaController.java
+C:\Users\yennf\Music\BelleMake_Up Bueno (2)\BelleMake_Up Bueno\BelleMake_Up\BelleMake_Up\src\main\java\com\mycompany\bellemake_up\controlador\CarritovistaController.java
+C:\Users\yennf\Music\BelleMake_Up Bueno (2)\BelleMake_Up Bueno\BelleMake_Up\BelleMake_Up\src\main\java\com\mycompany\bellemake_up\modelo\JsonSerializable.java
+C:\Users\yennf\Music\BelleMake_Up Bueno (2)\BelleMake_Up Bueno\BelleMake_Up\BelleMake_Up\src\main\java\com\mycompany\bellemake_up\controlador\RegistrarsevistaController.java
+C:\Users\yennf\Music\BelleMake_Up Bueno (2)\BelleMake_Up Bueno\BelleMake_Up\BelleMake_Up\src\main\java\com\mycompany\bellemake_up\controlador\PreviewVistaController.java
+C:\Users\yennf\Music\BelleMake_Up Bueno (2)\BelleMake_Up Bueno\BelleMake_Up\BelleMake_Up\src\main\java\com\mycompany\bellemake_up\modelo\usuario.java
+C:\Users\yennf\Music\BelleMake_Up Bueno (2)\BelleMake_Up Bueno\BelleMake_Up\BelleMake_Up\src\main\java\com\mycompany\bellemake_up\modelo\listaInventario.java
+C:\Users\yennf\Music\BelleMake_Up Bueno (2)\BelleMake_Up Bueno\BelleMake_Up\BelleMake_Up\src\main\java\com\mycompany\bellemake_up\modelo\producto.java
+C:\Users\yennf\Music\BelleMake_Up Bueno (2)\BelleMake_Up Bueno\BelleMake_Up\BelleMake_Up\src\main\java\com\mycompany\bellemake_up\controlador\CatalogovistaController.java
+C:\Users\yennf\Music\BelleMake_Up Bueno (2)\BelleMake_Up Bueno\BelleMake_Up\BelleMake_Up\src\main\java\com\mycompany\bellemake_up\modelo\prodXusu.java
+C:\Users\yennf\Music\BelleMake_Up Bueno (2)\BelleMake_Up Bueno\BelleMake_Up\BelleMake_Up\src\main\java\com\mycompany\bellemake_up\controlador\JsonManager.java
+C:\Users\yennf\Music\BelleMake_Up Bueno (2)\BelleMake_Up Bueno\BelleMake_Up\BelleMake_Up\src\main\java\com\mycompany\bellemake_up\modelo\listaUsuario.java
+C:\Users\yennf\Music\BelleMake_Up Bueno (2)\BelleMake_Up Bueno\BelleMake_Up\BelleMake_Up\src\main\java\com\mycompany\bellemake_up\controlador\LoginVistaController.java
+C:\Users\yennf\Music\BelleMake_Up Bueno (2)\BelleMake_Up Bueno\BelleMake_Up\BelleMake_Up\src\main\java\com\mycompany\bellemake_up\modelo\nodo.java
+C:\Users\yennf\Music\BelleMake_Up Bueno (2)\BelleMake_Up Bueno\BelleMake_Up\BelleMake_Up\src\main\java\com\mycompany\bellemake_up\BelleMake_Up.java
+C:\Users\yennf\Music\BelleMake_Up Bueno (2)\BelleMake_Up Bueno\BelleMake_Up\BelleMake_Up\src\main\java\com\mycompany\bellemake_up\controlador\LocalDateAdapter.java
+C:\Users\yennf\Music\BelleMake_Up Bueno (2)\BelleMake_Up Bueno\BelleMake_Up\BelleMake_Up\src\main\java\com\mycompany\bellemake_up\controlador\IniciarsesionvistaController.java
+C:\Users\yennf\Music\BelleMake_Up Bueno (2)\BelleMake_Up Bueno\BelleMake_Up\BelleMake_Up\src\main\java\com\mycompany\bellemake_up\controlador\VistaDetallesProductoController.java
+C:\Users\yennf\Music\BelleMake_Up Bueno (2)\BelleMake_Up Bueno\BelleMake_Up\BelleMake_Up\src\main\java\com\mycompany\bellemake_up\modelo\listaProdXusu.java

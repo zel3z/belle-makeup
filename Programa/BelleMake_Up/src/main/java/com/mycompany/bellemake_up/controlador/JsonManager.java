@@ -3,15 +3,12 @@ package com.mycompany.bellemake_up.controlador;
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 import com.google.gson.reflect.TypeToken;
-import org.example.belle_makeup.modelo.*;
 
 import java.io.*;
 import java.lang.reflect.Type;
 import java.nio.charset.StandardCharsets;
 import java.util.ArrayList;
-import modelo.prodXusu;
-import modelo.producto;
-import modelo.usuario;
+import com.mycompany.bellemake_up.modelo.*;
 
 public class JsonManager {
 
@@ -20,18 +17,15 @@ public class JsonManager {
             .registerTypeAdapter(java.time.LocalDate.class, new LocalDateAdapter())
             .create();
 
-    // Ruta base para los archivos JSON (ajusta según tu estructura)
-    private static final String JSON_PATH = "src/main/java/org/example/belle_makeup/basededatos/";
+    private static final String JSON_PATH = "src/main/java/com/mycompany/bellemake_up/basededatos/";
 
-    // Nombres de archivos
     private static final String INVENTARIO_FILE = "productos.json";
     private static final String USUARIOS_FILE = "usuarios.json";
     private static final String PRODXUSU_FILE = "prodXusu.json";
 
-    // ==================== MÉTODOS PARA INVENTARIO ====================
-
     /**
      * Carga el inventario desde JSON a la lista
+     *
      * @param listaInventario Lista donde cargar los datos
      * @return true si se cargó exitosamente
      */
@@ -39,25 +33,26 @@ public class JsonManager {
         try {
             File archivo = new File(JSON_PATH + INVENTARIO_FILE);
 
-            // Si el archivo no existe, crear uno vacío
+            // ⚠️ CORREGIDO: NO crear archivo vacío automáticamente
             if (!archivo.exists()) {
-                System.out.println("Archivo " + INVENTARIO_FILE + " no existe. Creando uno vacío...");
-                guardarInventario(listaInventario);
-                return true;
+                System.err.println(" ERROR: Archivo " + INVENTARIO_FILE + " no existe.");
+                System.err.println(" Ruta: " + archivo.getAbsolutePath());
+                return false; // NO llamar a guardarInventario() aquí
             }
 
             // Leer archivo
             try (Reader reader = new FileReader(archivo, StandardCharsets.UTF_8)) {
-                Type tipoLista = new TypeToken<ArrayList<producto>>(){}.getType();
+                Type tipoLista = new TypeToken<ArrayList<producto>>() {
+                }.getType();
                 ArrayList<producto> productos = gson.fromJson(reader, tipoLista);
 
-                if (productos != null) {
+                if (productos != null && !productos.isEmpty()) {
                     listaInventario.fromArrayList(productos);
-                    System.out.println("Inventario cargado: " + productos.size() + " productos.");
+                    System.out.println(" Inventario cargado: " + productos.size() + " productos.");
                     return true;
                 } else {
-                    System.out.println("Archivo vacío, inventario inicializado sin productos.");
-                    return true;
+                    System.err.println(" Archivo vacío o corrupto: " + INVENTARIO_FILE);
+                    return false;
                 }
             }
 
@@ -70,6 +65,7 @@ public class JsonManager {
 
     /**
      * Guarda el inventario desde la lista a JSON
+     *
      * @param listaInventario Lista con los datos a guardar
      * @return true si se guardó exitosamente
      */
@@ -93,10 +89,9 @@ public class JsonManager {
         }
     }
 
-    // ==================== MÉTODOS PARA USUARIOS ====================
-
     /**
      * Carga los usuarios desde JSON a la lista
+     *
      * @param listaUsuario Lista donde cargar los datos
      * @return true si se cargó exitosamente
      */
@@ -113,7 +108,8 @@ public class JsonManager {
 
             // Leer archivo
             try (Reader reader = new FileReader(archivo, StandardCharsets.UTF_8)) {
-                Type tipoLista = new TypeToken<ArrayList<usuario>>(){}.getType();
+                Type tipoLista = new TypeToken<ArrayList<usuario>>() {
+                }.getType();
                 ArrayList<usuario> usuarios = gson.fromJson(reader, tipoLista);
 
                 if (usuarios != null) {
@@ -135,6 +131,7 @@ public class JsonManager {
 
     /**
      * Guarda los usuarios desde la lista a JSON
+     *
      * @param listaUsuario Lista con los datos a guardar
      * @return true si se guardó exitosamente
      */
@@ -159,11 +156,12 @@ public class JsonManager {
     }
 
     // ==================== MÉTODOS PARA PRODXUSU ====================
-
     /**
-     * Carga los datos de ProdXUsu desde JSON
-     * IMPORTANTE: Carga TODO el archivo pero la lista filtra por usuarioActual
-     * @param listaProdXUsu Lista donde cargar los datos (debe tener usuarioActual ya establecido)
+     * Carga los datos de ProdXUsu desde JSON IMPORTANTE: Carga TODO el archivo
+     * pero la lista filtra por usuarioActual
+     *
+     * @param listaProdXUsu Lista donde cargar los datos (debe tener
+     * usuarioActual ya establecido)
      * @return true si se cargó exitosamente
      */
     public static boolean cargarProdXUsu(listaProdXusu listaProdXUsu) {
@@ -179,7 +177,8 @@ public class JsonManager {
 
             // Leer archivo completo (todos los usuarios)
             try (Reader reader = new FileReader(archivo, StandardCharsets.UTF_8)) {
-                Type tipoLista = new TypeToken<ArrayList<prodXusu>>(){}.getType();
+                Type tipoLista = new TypeToken<ArrayList<prodXusu>>() {
+                }.getType();
                 ArrayList<prodXusu> todosProdXUsu = gson.fromJson(reader, tipoLista);
 
                 if (todosProdXUsu != null) {
@@ -201,8 +200,9 @@ public class JsonManager {
     }
 
     /**
-     * Guarda los datos de ProdXUsu a JSON
-     * IMPORTANTE: Combina los datos del usuario actual con los de otros usuarios existentes
+     * Guarda los datos de ProdXUsu a JSON IMPORTANTE: Combina los datos del
+     * usuario actual con los de otros usuarios existentes
+     *
      * @param listaProdXUsu Lista con los datos del usuario actual
      * @return true si se guardó exitosamente
      */
@@ -216,7 +216,8 @@ public class JsonManager {
             // 1. Leer datos existentes de TODOS los usuarios
             if (archivo.exists()) {
                 try (Reader reader = new FileReader(archivo, StandardCharsets.UTF_8)) {
-                    Type tipoLista = new TypeToken<ArrayList<prodXusu>>(){}.getType();
+                    Type tipoLista = new TypeToken<ArrayList<prodXusu>>() {
+                    }.getType();
                     ArrayList<prodXusu> datosExistentes = gson.fromJson(reader, tipoLista);
 
                     if (datosExistentes != null) {
@@ -251,6 +252,7 @@ public class JsonManager {
 
     /**
      * Obtiene el usuario actual de la lista (método auxiliar)
+     *
      * @param listaProdXUsu Lista de ProdXUsu
      * @return Nombre del usuario actual
      */
@@ -263,7 +265,6 @@ public class JsonManager {
     }
 
     // ==================== MÉTODOS DE UTILIDAD ====================
-
     /**
      * Inicializa todos los archivos JSON si no existen
      */
@@ -299,8 +300,8 @@ public class JsonManager {
      * Guarda todos los datos del sistema
      */
     public static boolean guardarTodo(listaInventario inventario,
-                                      listaUsuario usuarios,
-                                      listaProdXusu prodXUsu) {
+            listaUsuario usuarios,
+            listaProdXusu prodXUsu) {
         boolean inventarioOk = guardarInventario(inventario);
         boolean usuariosOk = guardarUsuarios(usuarios);
         boolean prodXUsuOk = guardarProdXUsu(prodXUsu);
@@ -312,8 +313,8 @@ public class JsonManager {
      * Carga todos los datos del sistema
      */
     public static boolean cargarTodo(listaInventario inventario,
-                                     listaUsuario usuarios,
-                                     listaProdXusu prodXUsu) {
+            listaUsuario usuarios,
+            listaProdXusu prodXUsu) {
         boolean inventarioOk = cargarInventario(inventario);
         boolean usuariosOk = cargarUsuarios(usuarios);
         // ProdXUsu se carga después del login cuando se establece usuarioActual

@@ -5,5 +5,40 @@
     "favorito": false,
     "carrito": false,
     "cantiComprado": 0
+  },
+  {
+    "usuario": "bea",
+    "idprod": "2",
+    "favorito": false,
+    "carrito": false,
+    "cantiComprado": 0
+  },
+  {
+    "usuario": "yenney",
+    "idprod": "3",
+    "favorito": false,
+    "carrito": true,
+    "cantiComprado": 2
+  },
+  {
+    "usuario": "yenney",
+    "idprod": "4",
+    "favorito": false,
+    "carrito": true,
+    "cantiComprado": 2
+  },
+  {
+    "usuario": "yenney",
+    "idprod": "5",
+    "favorito": false,
+    "carrito": true,
+    "cantiComprado": 1
+  },
+  {
+    "usuario": "yenney",
+    "idprod": "7",
+    "favorito": true,
+    "carrito": true,
+    "cantiComprado": 1
   }
 ]

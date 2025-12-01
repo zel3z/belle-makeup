@@ -1,23 +1,23 @@
 package com.mycompany.bellemake_up;
 
 import com.mycompany.bellemake_up.controlador.JsonManager;
+import com.mycompany.bellemake_up.modelo.listaInventario;
+import com.mycompany.bellemake_up.modelo.listaProdXusu;
+import com.mycompany.bellemake_up.modelo.listaUsuario;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
 
-import org.example.belle_makeup.modelo.*;
-
 import java.util.Objects;
-import modelo.usuario;
 
 public class BelleMake_Up extends Application {
 
     // Variables globales del sistema
     public static listaInventario listaInventario = new listaInventario();
     public static listaUsuario listaUsuario = new listaUsuario();
-    public static listaProdXusu listaProdXUsu = new listaProdXusu();
+    public static listaProdXusu listaProdXusu = new listaProdXusu();
     public static String usuarioActual = null;
 
     @Override
@@ -49,7 +49,7 @@ public class BelleMake_Up extends Application {
     private void configurarCierrePrograma(Stage stage) {
         stage.setOnCloseRequest(event -> {
             System.out.println("Guardando datos...");
-            JsonManager.guardarTodo(listaInventario, listaUsuario, listaProdXUsu);
+            JsonManager.guardarTodo(listaInventario, listaUsuario, listaProdXusu);
         });
     }
 

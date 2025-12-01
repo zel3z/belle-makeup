@@ -1,13 +1,10 @@
-package org.example.belle_makeup.modelo;
+package com.mycompany.bellemake_up.modelo;
 
-import static com.mycompany.bellemake_up.BelleMake_Up.listaProdXUsu;
+import static com.mycompany.bellemake_up.BelleMake_Up.listaProdXusu;
 import static com.mycompany.bellemake_up.BelleMake_Up.listaUsuario;
-import static com.mycompany.bellemake_up.BelleMake_Up.usuarioActual;
 import com.mycompany.bellemake_up.controlador.JsonManager;
 import java.util.ArrayList;
 import java.util.Objects;
-import modelo.nodo;
-import modelo.usuario;
 
 public class listaUsuario implements JsonSerializable<usuario> {
 
@@ -65,20 +62,22 @@ public class listaUsuario implements JsonSerializable<usuario> {
      * Validar credenciales login
      */
     public usuario validarLogin(String nombreUsuario, String contra) {
-       nodo<usuario> actual = cab;
+        nodo<usuario> actual = cab;
 
         while (actual != null) {
             usuario user = actual.info;
-            if (user.getUsuario().equals(nombreUsuario) &&
-                    Objects.equals(user.getContra(), contra)) {
+            if (user.getUsuario().equals(nombreUsuario)
+                    && Objects.equals(user.getContra(), contra)) {
                 return user;
             }
             actual = actual.sig;
-        } return null;
+        }
+        return null;
     }
 
     /**
      * Verifica si un nombre de usuario ya existe
+     *
      * @param nombreUsuario Nombre de usuario a verificar
      * @return true si existe, false si está disponible
      */
@@ -103,9 +102,9 @@ public class listaUsuario implements JsonSerializable<usuario> {
         }
         return contador;
     }
-    
+
     public static boolean registrarUsuario(String usuario, String nombre,
-                                           String contra, String correo, String rol) {
+            String contra, String correo, String rol) {
         if (listaUsuario.existeUsuario(usuario)) {
             return false;
         }
@@ -114,13 +113,12 @@ public class listaUsuario implements JsonSerializable<usuario> {
         JsonManager.guardarUsuarios(listaUsuario);
         return true;
     }
-    
+
     public static boolean realizarLogin(String usuario, String contrasena) {
         usuario user = listaUsuario.validarLogin(usuario, contrasena);
         if (user != null) {
-            usuarioActual = usuario;
-            listaProdXUsu.setUsuarioActual(usuarioActual);
-            JsonManager.cargarProdXUsu(listaProdXUsu);
+            listaProdXusu.setUsuarioActual(usuario);
+            JsonManager.cargarProdXUsu(listaProdXusu);
             return true;
         }
         return false;

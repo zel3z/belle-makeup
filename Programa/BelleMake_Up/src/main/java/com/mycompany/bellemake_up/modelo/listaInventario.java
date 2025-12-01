@@ -1,8 +1,6 @@
-package org.example.belle_makeup.modelo;
+package com.mycompany.bellemake_up.modelo;
 
 import java.util.ArrayList;
-import modelo.nodo;
-import modelo.producto;
 
 public class listaInventario implements JsonSerializable<producto> {
 

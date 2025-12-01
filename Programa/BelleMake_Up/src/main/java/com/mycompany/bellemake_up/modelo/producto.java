@@ -2,7 +2,7 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
-package modelo;
+package com.mycompany.bellemake_up.modelo;
 
 /**
  *
@@ -12,7 +12,7 @@ public class producto {
     public String idprod;
     public String nomprod;
     public float precio;
-    public String descri;
+    public String descrip;
     public String categoria;
     public int stock;
     public int vendidos;
@@ -29,7 +29,7 @@ public class producto {
         this.idprod = idprod;
         this.nomprod = nomprod;
         this.precio = precio;
-        this.descri = descri;
+        this.descrip = descri;
         this.categoria = categoria;
         this.stock = stock;
         this.vendidos = vendidos;
@@ -65,11 +65,11 @@ public class producto {
     }
 
     public String getDesc() {
-        return descri;
+        return descrip;
     }
 
     public void setDesc(String desc) {
-        this.descri = desc;
+        this.descrip = desc;
     }
 
     public String getCategoria() {

@@ -1,4 +1,4 @@
-package org.example.belle_makeup.modelo;
+package com.mycompany.bellemake_up.modelo;
 
 import java.util.ArrayList;
 

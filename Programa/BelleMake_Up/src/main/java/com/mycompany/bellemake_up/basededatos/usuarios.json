@@ -26,5 +26,12 @@
     "contra": "30645",
     "correo": "yenni@gmail.com",
     "rol": "cliente"
+  },
+  {
+    "usuario": "re",
+    "nombre": "resi",
+    "contra": "09",
+    "correo": "k",
+    "rol": "cliente"
   }
 ]
