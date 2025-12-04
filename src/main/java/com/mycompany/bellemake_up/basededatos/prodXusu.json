@@ -1,0 +1,430 @@
+[
+  {
+    "usuario": "bea",
+    "idprod": "1",
+    "favorito": false,
+    "carrito": false,
+    "comprado": "2025-12-01",
+    "cantiComprado": 6
+  },
+  {
+    "usuario": "bea",
+    "idprod": "2",
+    "favorito": false,
+    "carrito": false,
+    "comprado": "2025-12-01",
+    "cantiComprado": 2
+  },
+  {
+    "usuario": "bea",
+    "idprod": "3",
+    "favorito": true,
+    "carrito": false,
+    "cantiComprado": 0
+  },
+  {
+    "usuario": "daniela",
+    "idprod": "2",
+    "favorito": true,
+    "carrito": false,
+    "cantiComprado": 1
+  },
+  {
+    "usuario": "daniela",
+    "idprod": "2",
+    "favorito": false,
+    "carrito": false,
+    "comprado": "2025-12-01",
+    "cantiComprado": 1
+  },
+  {
+    "usuario": "yeiber",
+    "idprod": "2",
+    "favorito": true,
+    "carrito": false,
+    "cantiComprado": 0
+  },
+  {
+    "usuario": "yeiber",
+    "idprod": "4",
+    "favorito": false,
+    "carrito": true,
+    "cantiComprado": 1
+  },
+  {
+    "usuario": "dani",
+    "idprod": "2",
+    "favorito": true,
+    "carrito": false,
+    "cantiComprado": 2
+  },
+  {
+    "usuario": "dani",
+    "idprod": "3",
+    "favorito": false,
+    "carrito": false,
+    "cantiComprado": 1
+  },
+  {
+    "usuario": "dani",
+    "idprod": "3",
+    "favorito": false,
+    "carrito": false,
+    "comprado": "2025-12-02",
+    "cantiComprado": 1
+  },
+  {
+    "usuario": "dani",
+    "idprod": "2",
+    "favorito": false,
+    "carrito": false,
+    "comprado": "2025-12-02",
+    "cantiComprado": 2
+  },
+  {
+    "usuario": "dani",
+    "idprod": "4",
+    "favorito": false,
+    "carrito": false,
+    "cantiComprado": 1
+  },
+  {
+    "usuario": "dani",
+    "idprod": "1",
+    "favorito": false,
+    "carrito": false,
+    "cantiComprado": 1
+  },
+  {
+    "usuario": "dani",
+    "idprod": "1",
+    "favorito": false,
+    "carrito": false,
+    "comprado": "2025-12-02",
+    "cantiComprado": 1
+  },
+  {
+    "usuario": "dani",
+    "idprod": "4",
+    "favorito": false,
+    "carrito": false,
+    "comprado": "2025-12-02",
+    "cantiComprado": 1
+  },
+  {
+    "usuario": "yei",
+    "idprod": "3",
+    "favorito": true,
+    "carrito": false,
+    "cantiComprado": 0
+  },
+  {
+    "usuario": "yei",
+    "idprod": "2",
+    "favorito": false,
+    "carrito": true,
+    "cantiComprado": 1
+  },
+  {
+    "usuario": "yei",
+    "idprod": "27",
+    "favorito": false,
+    "carrito": false,
+    "comprado": "2025-12-02",
+    "cantiComprado": 1
+  },
+  {
+    "usuario": "alberto",
+    "idprod": "4",
+    "favorito": true,
+    "carrito": false,
+    "cantiComprado": 0
+  },
+  {
+    "usuario": "alberto",
+    "idprod": "2",
+    "favorito": true,
+    "carrito": true,
+    "cantiComprado": 1
+  },
+  {
+    "usuario": "yenney",
+    "idprod": "3",
+    "favorito": true,
+    "carrito": false,
+    "comprado": "2025-12-01",
+    "cantiComprado": 2
+  },
+  {
+    "usuario": "yenney",
+    "idprod": "4",
+    "favorito": false,
+    "carrito": false,
+    "comprado": "2025-12-01",
+    "cantiComprado": 4
+  },
+  {
+    "usuario": "yenney",
+    "idprod": "5",
+    "favorito": false,
+    "carrito": false,
+    "comprado": "2025-12-01",
+    "cantiComprado": 2
+  },
+  {
+    "usuario": "yenney",
+    "idprod": "7",
+    "favorito": true,
+    "carrito": false,
+    "comprado": "2025-12-01",
+    "cantiComprado": 2
+  },
+  {
+    "usuario": "yenney",
+    "idprod": "2",
+    "favorito": true,
+    "carrito": true,
+    "comprado": "2025-12-01",
+    "cantiComprado": 1
+  },
+  {
+    "usuario": "yenney",
+    "idprod": "1",
+    "favorito": true,
+    "carrito": false,
+    "cantiComprado": 1
+  },
+  {
+    "usuario": "yenney",
+    "idprod": "25",
+    "favorito": false,
+    "carrito": false,
+    "cantiComprado": 1
+  },
+  {
+    "usuario": "yenney",
+    "idprod": "25",
+    "favorito": false,
+    "carrito": false,
+    "comprado": "2025-12-01",
+    "cantiComprado": 1
+  },
+  {
+    "usuario": "yenney",
+    "idprod": "1",
+    "favorito": false,
+    "carrito": false,
+    "comprado": "2025-12-01",
+    "cantiComprado": 1
+  },
+  {
+    "usuario": "yenney",
+    "idprod": "3",
+    "favorito": true,
+    "carrito": false,
+    "comprado": "2025-12-01",
+    "cantiComprado": 2
+  },
+  {
+    "usuario": "yenney",
+    "idprod": "4",
+    "favorito": false,
+    "carrito": false,
+    "comprado": "2025-12-01",
+    "cantiComprado": 4
+  },
+  {
+    "usuario": "yenney",
+    "idprod": "5",
+    "favorito": false,
+    "carrito": false,
+    "comprado": "2025-12-01",
+    "cantiComprado": 2
+  },
+  {
+    "usuario": "yenney",
+    "idprod": "7",
+    "favorito": true,
+    "carrito": false,
+    "comprado": "2025-12-01",
+    "cantiComprado": 2
+  },
+  {
+    "usuario": "yenney",
+    "idprod": "2",
+    "favorito": true,
+    "carrito": true,
+    "comprado": "2025-12-01",
+    "cantiComprado": 1
+  },
+  {
+    "usuario": "yenney",
+    "idprod": "1",
+    "favorito": true,
+    "carrito": false,
+    "cantiComprado": 1
+  },
+  {
+    "usuario": "yenney",
+    "idprod": "25",
+    "favorito": false,
+    "carrito": false,
+    "cantiComprado": 1
+  },
+  {
+    "usuario": "yenney",
+    "idprod": "25",
+    "favorito": false,
+    "carrito": false,
+    "comprado": "2025-12-01",
+    "cantiComprado": 1
+  },
+  {
+    "usuario": "yenney",
+    "idprod": "1",
+    "favorito": false,
+    "carrito": false,
+    "comprado": "2025-12-01",
+    "cantiComprado": 1
+  },
+  {
+    "usuario": "yenney",
+    "idprod": "3",
+    "favorito": true,
+    "carrito": false,
+    "comprado": "2025-12-01",
+    "cantiComprado": 2
+  },
+  {
+    "usuario": "yenney",
+    "idprod": "4",
+    "favorito": false,
+    "carrito": false,
+    "comprado": "2025-12-01",
+    "cantiComprado": 4
+  },
+  {
+    "usuario": "yenney",
+    "idprod": "5",
+    "favorito": false,
+    "carrito": false,
+    "comprado": "2025-12-01",
+    "cantiComprado": 2
+  },
+  {
+    "usuario": "yenney",
+    "idprod": "7",
+    "favorito": true,
+    "carrito": false,
+    "comprado": "2025-12-01",
+    "cantiComprado": 2
+  },
+  {
+    "usuario": "yenney",
+    "idprod": "2",
+    "favorito": true,
+    "carrito": true,
+    "comprado": "2025-12-01",
+    "cantiComprado": 1
+  },
+  {
+    "usuario": "yenney",
+    "idprod": "1",
+    "favorito": true,
+    "carrito": false,
+    "cantiComprado": 1
+  },
+  {
+    "usuario": "yenney",
+    "idprod": "25",
+    "favorito": false,
+    "carrito": false,
+    "cantiComprado": 1
+  },
+  {
+    "usuario": "yenney",
+    "idprod": "25",
+    "favorito": false,
+    "carrito": false,
+    "comprado": "2025-12-01",
+    "cantiComprado": 1
+  },
+  {
+    "usuario": "yenney",
+    "idprod": "1",
+    "favorito": false,
+    "carrito": false,
+    "comprado": "2025-12-01",
+    "cantiComprado": 1
+  },
+  {
+    "usuario": "yenney",
+    "idprod": "3",
+    "favorito": true,
+    "carrito": false,
+    "comprado": "2025-12-01",
+    "cantiComprado": 2
+  },
+  {
+    "usuario": "yenney",
+    "idprod": "4",
+    "favorito": false,
+    "carrito": false,
+    "comprado": "2025-12-01",
+    "cantiComprado": 4
+  },
+  {
+    "usuario": "yenney",
+    "idprod": "5",
+    "favorito": false,
+    "carrito": false,
+    "comprado": "2025-12-01",
+    "cantiComprado": 2
+  },
+  {
+    "usuario": "yenney",
+    "idprod": "7",
+    "favorito": true,
+    "carrito": false,
+    "comprado": "2025-12-01",
+    "cantiComprado": 2
+  },
+  {
+    "usuario": "yenney",
+    "idprod": "2",
+    "favorito": true,
+    "carrito": true,
+    "comprado": "2025-12-01",
+    "cantiComprado": 1
+  },
+  {
+    "usuario": "yenney",
+    "idprod": "1",
+    "favorito": true,
+    "carrito": false,
+    "cantiComprado": 1
+  },
+  {
+    "usuario": "yenney",
+    "idprod": "25",
+    "favorito": false,
+    "carrito": false,
+    "cantiComprado": 1
+  },
+  {
+    "usuario": "yenney",
+    "idprod": "25",
+    "favorito": false,
+    "carrito": false,
+    "comprado": "2025-12-01",
+    "cantiComprado": 1
+  },
+  {
+    "usuario": "yenney",
+    "idprod": "1",
+    "favorito": false,
+    "carrito": false,
+    "comprado": "2025-12-01",
+    "cantiComprado": 1
+  }
+]

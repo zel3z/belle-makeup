@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<VBox prefHeight="548.0" prefWidth="688.0" spacing="20" style="-fx-padding: 30; -fx-background-color: white;" xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.mycompany.bellemake_up.controlador.CarritovistaController">
+
+    <Label style="-fx-font-size: 24px; -fx-font-weight: bold;" text="Mi Carrito de Compras" textFill="#df0909" />
+    
+    <ScrollPane fitToWidth="true" hbarPolicy="NEVER" prefHeight="272.0" prefWidth="627.0" style="-fx-background-color: white;" vbarPolicy="ALWAYS">
+        <content>
+            <VBox fx:id="contenedorItemsCarrito" spacing="10" style="-fx-background-color: white;">
+                <Label fx:id="lblCarritoVacio" text="Tu carrito está vacío" />
+                <!-- Aquí se agregarán dinámicamente los productos -->
+            </VBox>
+        </content>
+    </ScrollPane>
+    
+    <HBox prefHeight="100.0" prefWidth="200.0">
+        <children>
+            <VBox maxWidth="-Infinity" minWidth="-Infinity" prefHeight="116.0" prefWidth="206.0" spacing="15">
+                <Label style="-fx-font-weight: bold;" text="Resumen del Pedido" />
+                <Label fx:id="lblTotal" style="-fx-font-weight: bold;" text="Total: $0" />
+                <Label fx:id="lblSubtotal" text="Subtotal: $0" />
+                <Label fx:id="lblEnvio" text="Envío: $10.000" />
+            </VBox>
+            
+            <HBox maxWidth="-Infinity" prefHeight="116.0" prefWidth="423.0" spacing="30.0">
+                <children>
+                    <Button onAction="#vaciarCarrito" prefHeight="26.0" prefWidth="179.0" 
+                            style="-fx-background-color: DF0909; -fx-background-radius: 20;" 
+                            text="Vaciar Carrito" textFill="WHITE" />
+                 
+                    
+                    <Button onAction="#procederPago" prefHeight="26.0" prefWidth="195.0" 
+                            style="-fx-line-spacing: 30; -fx-background-color: DF0909; -fx-background-radius: 20;" 
+                            text="Proceder al Pago" textFill="WHITE">
+                        <font>
+                            <Font name="System Bold" size="12.0" />
+                        </font>
+                    </Button>
+                </children>
+            </HBox>
+        </children>
+    </HBox>
+</VBox>

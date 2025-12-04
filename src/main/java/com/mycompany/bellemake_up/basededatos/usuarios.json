@@ -1,0 +1,58 @@
+[
+  {
+    "usuario": "bea",
+    "nombre": "b",
+    "contra": "123",
+    "correo": "b@correo.com",
+    "rol": "cliente"
+  },
+  {
+    "usuario": "dan",
+    "nombre": "da",
+    "contra": "da",
+    "correo": "da",
+    "rol": "cliente"
+  },
+  {
+    "usuario": "beaa",
+    "nombre": "bea",
+    "contra": "123",
+    "correo": "bea@gmail",
+    "rol": "cliente"
+  },
+  {
+    "usuario": "yenney",
+    "nombre": "Yennifer Moreno",
+    "contra": "30645",
+    "correo": "yenni@gmail.com",
+    "rol": "cliente"
+  },
+  {
+    "usuario": "re",
+    "nombre": "resi",
+    "contra": "09",
+    "correo": "k",
+    "rol": "cliente"
+  },
+  {
+    "usuario": "dani",
+    "nombre": "daniela",
+    "contra": "0000",
+    "correo": "d",
+    "rol": "cliente"
+  },
+  {
+    "usuario": "yei",
+    "nombre": "yeiber",
+    "contra": "12345",
+    "correo": "denidne",
+    "rol": "cliente"
+  },
+  {
+    "usuario": "alber",
+    "nombre": "alberto",
+    "contra": "111",
+    "correo": "al",
+    "rol": "cliente"
+  }
+]

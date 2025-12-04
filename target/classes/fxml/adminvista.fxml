@@ -1,0 +1,170 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.Group?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="900.0" prefWidth="1400.0" style="-fx-background-color: white;" xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.mycompany.bellemake_up.controlador.AdminvistaController">
+    <children>
+        <!-- ===================== HEADER FIJO ===================== -->
+        <StackPane prefHeight="78" style="-fx-background-color: #FFE1E9;" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+            <Group>
+                <Pane layoutX="41.0" prefHeight="78" prefWidth="1125.0" style="-fx-background-color: #FFE1E9;">
+                    <children>
+                        <ImageView fitHeight="70.0" fitWidth="171.0" layoutX="14.0" layoutY="7.0" preserveRatio="true">
+                            <image>
+                                <Image url="@../image/logo-belle-makeup.png" />
+                            </image>
+                        </ImageView>
+                        
+                        <HBox layoutX="894.0" layoutY="22.0" />
+                        
+                    </children>
+                </Pane>
+                  
+                <!-- Botón para regresar a Preview -->
+                <Button fx:id="btnRegresarPreview" layoutX="1240.0" layoutY="17.0" mnemonicParsing="false" prefHeight="40.0" prefWidth="29.0" style="-fx-background-color: #FFE1E9; -fx-cursor: hand;">
+                    <graphic>
+                        <ImageView fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
+                            <image>
+                                <Image url="@../image/salir.png" />
+                            </image>
+                        </ImageView>
+                    </graphic>
+                </Button>
+            </Group>
+        </StackPane>
+        
+        <!-- Contenido principal -->
+        <ScrollPane fitToWidth="true" hbarPolicy="NEVER" vbarPolicy="AS_NEEDED" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="78.0">
+            <content>
+                <VBox alignment="TOP_CENTER" spacing="20" style="-fx-background-color: white; -fx-padding: 20;">
+                    
+                    <!-- Banner con pregunta -->
+                    <StackPane prefHeight="200.0" prefWidth="1350.0" style="-fx-background-color: #FFE1E9; -fx-background-radius: 10;">
+                        <children>
+                            <ImageView fitHeight="444.0" fitWidth="1350.0" opacity="0.7" preserveRatio="false">
+                                <image>
+                                    <Image url="@../image/baner.jpg" />
+                                </image>
+                            </ImageView>
+                            <Label text="¿Qué parte de ti quieres resaltar el día de hoy?" textFill="WHITE">
+                                <font>
+                                    <Font name="System Bold" size="32.0" />
+                                </font>
+                            </Label>
+                        </children>
+                    </StackPane>
+                    
+                    <!-- Panel de Administración -->
+                    <VBox alignment="CENTER" spacing="10" style="-fx-padding: 0 20;">
+                        <Label style="-fx-font-size: 20px; -fx-font-weight: bold; -fx-text-fill: #333333;" text="Panel de Administración" />
+                        
+                        <!-- Estadísticas CENTRADAS con fondo rojo -->
+                        <GridPane alignment="CENTER" hgap="30" style="-fx-padding: 20; -fx-background-color: F7789A; -fx-background-radius: 10;" vgap="10">
+                            <columnConstraints>
+                                <ColumnConstraints halignment="CENTER" percentWidth="50" />
+                                <ColumnConstraints halignment="CENTER" percentWidth="50" />
+                            </columnConstraints>
+                            
+                            <!-- Productos -->
+                            <VBox alignment="CENTER" spacing="5" style="-fx-background-color: white; -fx-background-radius: 8; -fx-padding: 25 40;" GridPane.columnIndex="0">
+                                <Label style="-fx-text-fill: #DF0909; -fx-font-size: 16px; -fx-font-weight: bold;" text="Productos" />
+                                <Label fx:id="lblTotalProductos" style="-fx-text-fill: #DF0909; -fx-font-size: 36px; -fx-font-weight: bold;" text="0" />
+                            </VBox>
+                            
+                            <!-- Usuarios -->
+                            <VBox alignment="CENTER" spacing="5" style="-fx-background-color: white; -fx-background-radius: 8; -fx-padding: 25 40;" GridPane.columnIndex="1">
+                                <Label style="-fx-text-fill: #DF0909; -fx-font-size: 16px; -fx-font-weight: bold;" text="Usuarios" />
+                                <Label fx:id="lblTotalUsuarios" style="-fx-text-fill: #DF0909; -fx-font-size: 36px; -fx-font-weight: bold;" text="0" />
+                            </VBox>
+                     <rowConstraints>
+                        <RowConstraints />
+                     </rowConstraints>
+                        </GridPane>
+                    </VBox>
+                    
+                    <!-- Formulario Agregar Producto -->
+                    <VBox spacing="15" style="-fx-padding: 20; -fx-background-color: white; -fx-background-radius: 10; -fx-border-color: #e0e0e0; -fx-border-width: 1; -fx-border-radius: 10;">
+                        <Label style="-fx-font-size: 18px; -fx-font-weight: bold; -fx-text-fill: #333333;" text="Agregar Nuevo Producto" textFill="#ff80d1" />
+                        
+                        <GridPane hgap="15" vgap="10">
+                            <columnConstraints>
+                                <ColumnConstraints percentWidth="30" />
+                                <ColumnConstraints percentWidth="70" />
+                            </columnConstraints>
+                            
+                            <!-- Campos del formulario -->
+                            <Label text="Nombre del producto:" GridPane.columnIndex="0" GridPane.rowIndex="0" />
+                            <TextField fx:id="txtNombreProducto" promptText="Ingrese nombre del producto" GridPane.columnIndex="1" GridPane.rowIndex="0" />
+                            
+                            <Label text="Precio:" GridPane.columnIndex="0" GridPane.rowIndex="1" />
+                            <TextField fx:id="txtPrecio" promptText="0.00" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                            
+                            <Label text="Categoría:" GridPane.columnIndex="0" GridPane.rowIndex="2" />
+                            <HBox spacing="10" GridPane.columnIndex="1" GridPane.rowIndex="2">
+                                <!-- Botones ROJOS con letras BLANCAS -->
+                                <Button fx:id="btnCatMaquillaje" style="-fx-background-color: #DF0909; -fx-text-fill: white; -fx-font-weight: bold; -fx-padding: 8 16;" text="Maquillaje" />
+                                <Button fx:id="btnCatCuidadoFacial" style="-fx-background-color: #f0f0f0; -fx-text-fill: #333; -fx-font-weight: bold; -fx-padding: 8 16;" text="Cuidado Facial" />
+                                <Button fx:id="btnCatAccesorios" style="-fx-background-color: #f0f0f0; -fx-text-fill: #333; -fx-font-weight: bold; -fx-padding: 8 16;" text="Accesorios" />
+                            </HBox>
+                            
+                            <Label text="Descripción:" GridPane.columnIndex="0" GridPane.rowIndex="3" />
+                            <TextArea fx:id="txtDescripcion" prefRowCount="3" promptText="Ingrese descripción del producto" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+                            
+                            <Label text="Stock:" GridPane.columnIndex="0" GridPane.rowIndex="4" />
+                            <TextField fx:id="txtStock" promptText="0" GridPane.columnIndex="1" GridPane.rowIndex="4" />
+                            
+                            <Label text="Imagen del producto:" GridPane.columnIndex="0" GridPane.rowIndex="5" />
+                            <HBox spacing="10" GridPane.columnIndex="1" GridPane.rowIndex="5">
+                                <!-- Botón rojo para elegir archivo -->
+                                <Button fx:id="btnElegirImagen" style="-fx-background-color: #DF0909; -fx-text-fill: white; -fx-font-weight: bold;" text="Elegir Archivo" />
+                                <Label fx:id="lblArchivo" style="-fx-text-fill: #666;" text="No se eligió ningún archivo" />
+                            </HBox>
+                            
+                            <rowConstraints>
+                                <RowConstraints />
+                                <RowConstraints />
+                                <RowConstraints />
+                                <RowConstraints />
+                                <RowConstraints />
+                                <RowConstraints />
+                            </rowConstraints>
+                        </GridPane>
+                        
+                        <!-- Botón rojo para agregar producto -->
+                        <Button fx:id="btnAgregarProducto" style="-fx-background-color: #DF0909; -fx-text-fill: white; -fx-font-weight: bold; -fx-padding: 12 40; -fx-font-size: 16px;" text="Agregar Producto" />
+                    </VBox>
+                    
+                    <!-- Lista de Productos - OCUPA TODO EL ANCHO -->
+<!-- Lista de Productos - OCUPA TODO EL ANCHO -->
+<VBox spacing="15" style="-fx-padding: 20; -fx-background-color: white; -fx-background-radius: 10; -fx-border-color: #e0e0e0; -fx-border-width: 1; -fx-border-radius: 10; -fx-max-width: 1350;">
+    <Label style="-fx-font-size: 18px; -fx-font-weight: bold; -fx-text-fill: #333333;" text="Lista de Productos" />
+    
+    <!-- Tabla que ocupa todo el ancho disponible -->
+    <TableView fx:id="tablaProductos" prefHeight="400" style="-fx-border-color: #cccccc; -fx-border-width: 1; -fx-border-radius: 5;">
+        <columns>
+            <!-- Las columnas se agregarán desde el controlador -->
+        </columns>
+    </TableView>
+</VBox>
+                </VBox>
+            </content>
+        </ScrollPane>
+    </children>
+</AnchorPane>

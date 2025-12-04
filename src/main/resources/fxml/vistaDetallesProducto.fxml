@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.layout.Region?>
+<?import javafx.geometry.Insets?>
+
+<AnchorPane prefHeight="500.0" prefWidth="750.0" style="-fx-background-color: white;" 
+            xmlns:fx="http://javafx.com/fxml/1" 
+            xmlns="http://javafx.com/javafx/17.0.2-ea" 
+            fx:controller="com.mycompany.bellemake_up.controlador.VistaDetallesProductoController">
+    
+    <HBox spacing="40.0" style="-fx-padding: 30;" 
+          AnchorPane.topAnchor="0.0" AnchorPane.bottomAnchor="0.0" 
+          AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
+        
+        <!-- SECCIÓN IZQUIERDA - Imagen -->
+        <VBox spacing="20.0" alignment="CENTER">
+            <ImageView fx:id="imgProducto" fitHeight="350.0" fitWidth="300.0" 
+                       preserveRatio="true" 
+                       style="-fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.3), 10, 0, 0, 0);" />
+        </VBox>
+
+        <!-- SECCIÓN DERECHA - Información -->
+        <VBox spacing="15.0" prefWidth="350.0">
+            
+            <Label fx:id="lblNombre" style="-fx-font-size: 24px; -fx-font-weight: bold; -fx-wrap-text: true;" />
+            
+            <Label fx:id="lblPrecio" style="-fx-font-size: 20px; -fx-text-fill: #C70039; -fx-font-weight: bold;" />
+            
+            <VBox spacing="5.0">
+                <Label text="Descripción:" style="-fx-font-weight: bold; -fx-font-size: 14px;"/>
+                <TextArea fx:id="txtDescripcion" editable="false" prefHeight="120.0" prefWidth="320.0" 
+                          style="-fx-background-color: #f8f8f8; -fx-border-color: #e0e0e0; -fx-font-size: 13px;" 
+                          wrapText="true" />
+            </VBox>
+            
+            <HBox prefHeight="20.0" prefWidth="308.0" />
+            
+            <HBox alignment="CENTER_LEFT" spacing="15.0">
+                <Button fx:id="btnMenos" style="-fx-font-size: 18px; -fx-background-color: transparent; -fx-cursor: hand;" text="-" />
+                
+                <Label fx:id="lblCantidad" alignment="CENTER" prefWidth="50.0" 
+                       style="-fx-font-size: 16px; -fx-padding: 8 15; -fx-border-color: #DDDDDD; -fx-background-radius: 15; -fx-border-radius: 15; -fx-alignment: center;" />
+                
+                <Button fx:id="btnMas" style="-fx-font-size: 18px; -fx-background-color: transparent; -fx-cursor: hand;" text="+" />
+                
+                <!-- REGION CORRECTAMENTE IMPORTADO -->
+                <Region HBox.hgrow="ALWAYS"/>
+                
+                <Button fx:id="btnFavoritos" prefHeight="40.0" prefWidth="160.0" 
+                        style="-fx-background-color: #DF0909; -fx-text-fill: white; -fx-background-radius: 20; -fx-font-size: 14px; -fx-cursor: hand;" 
+                        text="Añadir a favoritos" />
+            </HBox>
+
+            <HBox spacing="15.0" style="-fx-padding: 20 0 0 0;">
+                <Button fx:id="btnComprar" prefHeight="45.0" prefWidth="170.0" 
+                        style="-fx-background-color: #DF0909; -fx-text-fill: white; -fx-background-radius: 20; -fx-font-size: 14px; -fx-cursor: hand; -fx-font-weight: bold;" 
+                        text="Comprar ahora" />
+                
+                <Button fx:id="btnCarrito" prefHeight="45.0" prefWidth="170.0" 
+                        style="-fx-background-color: #DF0909; -fx-text-fill: white; -fx-background-radius: 20; -fx-font-size: 14px; -fx-cursor: hand; -fx-font-weight: bold;" 
+                        text="Añadir al carrito" />
+            </HBox>
+        </VBox>
+    </HBox>
+</AnchorPane>
